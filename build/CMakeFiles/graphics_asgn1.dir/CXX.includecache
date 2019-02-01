@@ -10,6 +10,16 @@
 main.h
 /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.h
 
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/ground.cpp
+ground.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/ground.h
+main.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.h
+
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/ground.h
+main.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.h
+
 /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/input.cpp
 iostream
 -
@@ -41,6 +51,8 @@ plane.h
 /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/plane.h
 target.h
 /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/target.h
+ground.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/ground.h
 
 /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.h
 iostream

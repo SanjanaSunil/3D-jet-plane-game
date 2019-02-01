@@ -150,6 +150,33 @@ src/color.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/color.cpp.s
 .PHONY : src/color.cpp.s
 
+src/ground.o: src/ground.cpp.o
+
+.PHONY : src/ground.o
+
+# target to build an object file
+src/ground.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/ground.cpp.o
+.PHONY : src/ground.cpp.o
+
+src/ground.i: src/ground.cpp.i
+
+.PHONY : src/ground.i
+
+# target to preprocess a source file
+src/ground.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/ground.cpp.i
+.PHONY : src/ground.cpp.i
+
+src/ground.s: src/ground.cpp.s
+
+.PHONY : src/ground.s
+
+# target to generate assembly for a file
+src/ground.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/ground.cpp.s
+.PHONY : src/ground.cpp.s
+
 src/input.o: src/input.cpp.o
 
 .PHONY : src/input.o
@@ -351,6 +378,9 @@ help:
 	@echo "... src/color.o"
 	@echo "... src/color.i"
 	@echo "... src/color.s"
+	@echo "... src/ground.o"
+	@echo "... src/ground.i"
+	@echo "... src/ground.s"
 	@echo "... src/input.o"
 	@echo "... src/input.i"
 	@echo "... src/input.s"

@@ -2,6 +2,7 @@
 #include "timer.h"
 #include "plane.h"
 #include "target.h"
+#include "ground.h"
 
 using namespace std;
 
@@ -12,6 +13,8 @@ GLFWwindow *window;
 /**************************
 * Customizable functions *
 **************************/
+
+Ground ocean;
 
 Plane player;
 Target target_point;
@@ -26,44 +29,35 @@ float target_x, target_y, target_z;
 
 int perspective = 0;
 
-/* Render the scene with openGL */
-/* Edit this function according to your assignment */
+
 void draw() {
     // clear the color and depth in the frame buffer
     glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     // use the loaded shader program
-    // Don't change unless you know what you are doing
     glUseProgram (programID);
 
-    // Eye - Location of camera. Don't change unless you are sure!!
     // glm::vec3 eye ( 5*cos(camera_rotation_angle*M_PI/180.0f), 0, 5*sin(camera_rotation_angle*M_PI/180.0f) );
     glm::vec3 eye (eye_x, eye_y, eye_z);
-    // Target - Where is the camera looking at.  Don't change unless you are sure!!
     glm::vec3 target (target_x, target_y, target_z);
-    // Up - Up vector defines tilt of camera.  Don't change unless you are sure!!
     glm::vec3 up (0, 1, 0);
 
     // Compute Camera matrix (view)
     Matrices.view = glm::lookAt( eye, target, up ); // Rotating Camera for 3D
-    // Don't change unless you are sure!!
     // Matrices.view = glm::lookAt(glm::vec3(0, 0, 3), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0)); // Fixed camera for 2D (ortho) in XY plane
 
     // Compute ViewProject matrix as view/camera might not be changed for this frame (basic scenario)
-    // Don't change unless you are sure!!
     glm::mat4 VP = Matrices.projection * Matrices.view;
 
     // Send our transformation to the currently bound shader, in the "MVP" uniform
     // For each model you render, since the MVP will be different (at least the M part)
-    // Don't change unless you are sure!!
     glm::mat4 MVP;  // MVP = Projection * View * Model
 
     // Scene render
     player.draw(VP);
 
-
-    // DRAW ONLY IF FRONT VIEW!!!!
-    target_point.draw(VP);
+    ocean.draw(VP);
+    if(perspective==0) target_point.draw(VP);
 }
 
 void tick_input(GLFWwindow *window) {
@@ -74,12 +68,14 @@ void tick_input(GLFWwindow *window) {
     if (left) {
         eye_x = player.position.x+2*player.width, eye_y = player.position.y, eye_z = player.position.z;
         target_x = player.position.x+10, target_y = 0, target_z = 0;
+        perspective = 0;
     }
 
     // Tower view
     if (right) {
         eye_x = 7, eye_y = 7, eye_z = 10;
         target_x = player.position.x, target_y = player.position.y, target_z = player.position.z;
+        perspective = 1;
     }
 }
 
@@ -96,8 +92,12 @@ void tick_elements() {
 
 void initGL(GLFWwindow *window, int width, int height) {
 
-    player       = Plane(0, 0, 4, 2, COLOR_RED);
-    eye_x = player.position.x+2*player.width, eye_y = player.position.y, eye_z = player.position.z;
+    ocean = Ground(0, 0, 0, COLOR_BLUE);
+
+    player = Plane(0, 0, 4, 2, COLOR_RED);
+    eye_x = player.position.x+2*player.width;
+    eye_y = player.position.y;
+    eye_z = player.position.z;
     target_x = player.position.x+10, target_y = 0, target_z = 0;
 
     target_point = Target(player.position.x+2*player.width+2, player.position.y, 0.3, COLOR_BLACK);
