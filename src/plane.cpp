@@ -12,73 +12,73 @@ Plane::Plane(float x, float y, float height, float width, color_t color) {
     const float PI = 3.14159265359;
     float angle = (2*PI)/(float)n;
     GLfloat vertex_buffer_data[2*9*n+2*9*n];
-    GLfloat y1 = width/2, z1 = 0.0f;
-	GLfloat y2 = cos(angle)*y1 - sin(angle)*z1;
-    GLfloat z2 = sin(angle)*y1 + cos(angle)*z1;
+    GLfloat x1 = width/2, y1 = 0.0f;
+	GLfloat x2 = cos(angle)*x1 - sin(angle)*y1;
+    GLfloat y2 = sin(angle)*x1 + cos(angle)*y1;
 
     // Circle and cone
     for(int i=0; i<2*9*n; i+=9) {
 
-        float xpos = height/2;
-        if(i>=9*n) xpos *= -1;
+        float zpos = height/2;
+        if(i>=9*n) zpos *= -1;
 
-        vertex_buffer_data[i] = xpos; //Centre of right circle
-        if(i<9*n) vertex_buffer_data[i] += width;
+        vertex_buffer_data[i] = 0.0f; //Centre of right circle
         vertex_buffer_data[i+1] = 0.0f;
-		vertex_buffer_data[i+2] = 0.0f;
+		vertex_buffer_data[i+2] = zpos;
+        if(i<9*n) vertex_buffer_data[i+2] += width;
 
-		vertex_buffer_data[i+3] = xpos;
+		vertex_buffer_data[i+3] = x1;
 		vertex_buffer_data[i+4] = y1;
-		vertex_buffer_data[i+5] = z1;
+		vertex_buffer_data[i+5] = zpos;
 
-		vertex_buffer_data[i+6] = xpos;
+		vertex_buffer_data[i+6] = x2;
 		vertex_buffer_data[i+7] = y2;
-        vertex_buffer_data[i+8] = z2;
+        vertex_buffer_data[i+8] = zpos;
 
+        x1 = x2;
         y1 = y2;
-        z1 = z2;
 
-        y2 = cos(angle)*y1 - sin(angle)*z1;
-        z2 = sin(angle)*y1 + cos(angle)*z1;
+        x2 = cos(angle)*x1 - sin(angle)*y1;
+        y2 = sin(angle)*x1 + cos(angle)*y1;
     }
 
-    y1 = width/2, z1 = 0.0f;
-	y2 = cos(angle)*y1 - sin(angle)*z1;
-    z2 = sin(angle)*y1 + cos(angle)*z1;
+    x1 = width/2, y1 = 0.0f;
+	x2 = cos(angle)*x1 - sin(angle)*y1;
+    y2 = sin(angle)*x1 + cos(angle)*y1;
 
     // Cylinder
     for(int i=2*9*n; i<4*9*n; i+=18) {
-        float xpos = height/2;
+        float zpos = height/2;
 
-        vertex_buffer_data[i] = xpos;
+        vertex_buffer_data[i] = x1;
         vertex_buffer_data[i+1] = y1;
-		vertex_buffer_data[i+2] = z1;
+		vertex_buffer_data[i+2] = zpos;
 
-		vertex_buffer_data[i+3] = xpos;
+		vertex_buffer_data[i+3] = x2;
 		vertex_buffer_data[i+4] = y2;
-		vertex_buffer_data[i+5] = z2;
+		vertex_buffer_data[i+5] = zpos;
 
-		vertex_buffer_data[i+6] = -1*xpos;
+		vertex_buffer_data[i+6] = x1;
 		vertex_buffer_data[i+7] = y1;
-        vertex_buffer_data[i+8] = z1;
+        vertex_buffer_data[i+8] = -1*zpos;
 
-        vertex_buffer_data[i+9] = -1*xpos;
+        vertex_buffer_data[i+9] = x1;
         vertex_buffer_data[i+10] = y1;
-		vertex_buffer_data[i+11] = z1;
+		vertex_buffer_data[i+11] = -1*zpos;
 
-		vertex_buffer_data[i+12] = -1*xpos;
+		vertex_buffer_data[i+12] = x2;
 		vertex_buffer_data[i+13] = y2;
-		vertex_buffer_data[i+14] = z2;
+		vertex_buffer_data[i+14] = -1*zpos;
 
-		vertex_buffer_data[i+15] = xpos;
+		vertex_buffer_data[i+15] = x2;
 		vertex_buffer_data[i+16] = y2;
-        vertex_buffer_data[i+17] = z2;
+        vertex_buffer_data[i+17] = zpos;
 
+        x1 = x2;
         y1 = y2;
-        z1 = z2;
 
-        y2 = cos(angle)*y1 - sin(angle)*z1;
-        z2 = sin(angle)*y1 + cos(angle)*z1;
+        x2 = cos(angle)*x1 - sin(angle)*y1;
+        y2 = sin(angle)*x1 + cos(angle)*y1;
     }
     // A cube has 6 faces with 2 triangles each, so this makes 6*2=12 triangles, and 12*3 vertices
     this->object = create3DObject(GL_TRIANGLES, 12*n, vertex_buffer_data, color, GL_FILL);

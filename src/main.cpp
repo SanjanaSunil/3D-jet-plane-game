@@ -66,8 +66,10 @@ void tick_input(GLFWwindow *window) {
 
     // Front view
     if (left) {
-        eye_x = player.position.x+2*player.width, eye_y = player.position.y, eye_z = player.position.z;
-        target_x = player.position.x+10, target_y = player.position.y, target_z = player.position.z;
+        eye_x = player.position.x;
+        eye_y = player.position.y;
+        eye_z = player.position.z+2*player.width;
+        target_x = player.position.x, target_y = player.position.y, target_z = player.position.z+10;
         perspective = 0;
     }
 
@@ -83,9 +85,9 @@ void tick_elements() {
     player.tick();
 
     // Target point move
-    target_point.position.x = player.position.x+2*player.width+2;
+    target_point.position.x = player.position.x;
     target_point.position.y = player.position.y;
-    target_point.position.z = player.position.z;
+    target_point.position.z = player.position.z+2*player.width+2;
 
     camera_rotation_angle += 1;
 }
@@ -95,12 +97,12 @@ void initGL(GLFWwindow *window, int width, int height) {
     ocean = Ground(0, 0, 0, COLOR_BLUE);
 
     player = Plane(0, 0, 4, 2, COLOR_RED);
-    eye_x = player.position.x+2*player.width;
+    eye_x = player.position.x;
     eye_y = player.position.y;
-    eye_z = player.position.z;
-    target_x = player.position.x+10, target_y = player.position.y, target_z = player.position.z;
+    eye_z = player.position.z+2*player.width;
+    target_x = player.position.x, target_y = player.position.y, target_z = player.position.z+10;
 
-    target_point = Target(player.position.x+2*player.width+2, player.position.y, 0.3, COLOR_BLACK);
+    target_point = Target(player.position.x, player.position.y, 0.3, COLOR_BLACK);
 
     programID = LoadShaders("Sample_GL.vert", "Sample_GL.frag");
     Matrices.MatrixID = glGetUniformLocation(programID, "MVP");
