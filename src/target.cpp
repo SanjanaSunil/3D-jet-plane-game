@@ -6,21 +6,25 @@ Target::Target(float x, float y, float radius, color_t color) {
     this->radius = radius;
     this->rotation = 0;
 
-    int n = 5000;
+    int n = 1000;
     const float PI = 3.14159265359;
     float angle = (2*PI)/(float)n;
     
-    GLfloat vertex_buffer_data[9*n];
+    GLfloat vertex_buffer_data[2*9*n];
 
     GLfloat y1 = radius, z1 = 0.0f;
 	GLfloat y2 = cos(angle)*y1 - sin(angle)*z1;
 	GLfloat z2 = sin(angle)*y1 + cos(angle)*z1;
 
-	for(int i=0; i<9*n; i+=9) {
+    GLfloat inner_y1 = radius - 0.1f, inner_z1 = 0.0f;
+	GLfloat inner_y2 = cos(angle)*inner_y1 - sin(angle)*inner_z1;
+	GLfloat inner_z2 = sin(angle)*inner_y1 + cos(angle)*inner_z1;
+
+	for(int i=0; i<2*9*n; i+=18) {
 		
 		vertex_buffer_data[i] = 0.0f;
-		vertex_buffer_data[i+1] = 0.0f;
-		vertex_buffer_data[i+2] = 0.0f;
+		vertex_buffer_data[i+1] = inner_y1;
+		vertex_buffer_data[i+2] = inner_z1;
 
 		vertex_buffer_data[i+3] = 0.0f;
 		vertex_buffer_data[i+4] = y1;
@@ -30,14 +34,32 @@ Target::Target(float x, float y, float radius, color_t color) {
 		vertex_buffer_data[i+7] = y2;
 		vertex_buffer_data[i+8] = z2;
 
+        vertex_buffer_data[i+9] = 0.0f;
+		vertex_buffer_data[i+10] = inner_y2;
+		vertex_buffer_data[i+11] = inner_z2;
+
+		vertex_buffer_data[i+12] = 0.0f;
+		vertex_buffer_data[i+13] = y1;
+		vertex_buffer_data[i+14] = z1;
+
+		vertex_buffer_data[i+15] = 0.0f;
+		vertex_buffer_data[i+16] = y2;
+		vertex_buffer_data[i+17] = z2;
+
 		y1 = y2;
 		z1 = z2;
 
 		y2 = cos(angle)*y1 - sin(angle)*z1;
         z2 = sin(angle)*y1 + cos(angle)*z1;
+
+        inner_y1 = inner_y2;
+		inner_z1 = inner_z2;
+
+		inner_y2 = cos(angle)*inner_y1 - sin(angle)*inner_z1;
+        inner_z2 = sin(angle)*inner_y1 + cos(angle)*inner_z1;
 	}
 
-    this->object = create3DObject(GL_TRIANGLES, 3*n, vertex_buffer_data, color, GL_FILL);
+    this->object = create3DObject(GL_TRIANGLES, 6*n, vertex_buffer_data, color, GL_FILL);
 }
 
 void Target::draw(glm::mat4 VP) {
