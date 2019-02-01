@@ -67,13 +67,13 @@ void tick_input(GLFWwindow *window) {
     // Front view
     if (left) {
         eye_x = player.position.x+2*player.width, eye_y = player.position.y, eye_z = player.position.z;
-        target_x = player.position.x+10, target_y = 0, target_z = 0;
+        target_x = player.position.x+10, target_y = player.position.y, target_z = player.position.z;
         perspective = 0;
     }
 
     // Tower view
     if (right) {
-        eye_x = 7, eye_y = 7, eye_z = 10;
+        eye_x = 10, eye_y = 10, eye_z = 10;
         target_x = player.position.x, target_y = player.position.y, target_z = player.position.z;
         perspective = 1;
     }
@@ -98,7 +98,7 @@ void initGL(GLFWwindow *window, int width, int height) {
     eye_x = player.position.x+2*player.width;
     eye_y = player.position.y;
     eye_z = player.position.z;
-    target_x = player.position.x+10, target_y = 0, target_z = 0;
+    target_x = player.position.x+10, target_y = player.position.y, target_z = player.position.z;
 
     target_point = Target(player.position.x+2*player.width+2, player.position.y, 0.3, COLOR_BLACK);
 
