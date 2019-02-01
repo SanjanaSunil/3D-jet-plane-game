@@ -10,7 +10,7 @@ Target::Target(float x, float y, float radius, color_t color) {
     const float PI = 3.14159265359;
     float angle = (2*PI)/(float)n;
     
-    GLfloat vertex_buffer_data[2*9*n];
+    GLfloat vertex_buffer_data[2*9*n+2*9+2*9];
 
     GLfloat y1 = radius, z1 = 0.0f;
 	GLfloat y2 = cos(angle)*y1 - sin(angle)*z1;
@@ -59,7 +59,50 @@ Target::Target(float x, float y, float radius, color_t color) {
         inner_z2 = sin(angle)*inner_y1 + cos(angle)*inner_z1;
 	}
 
-    this->object = create3DObject(GL_TRIANGLES, 6*n, vertex_buffer_data, color, GL_FILL);
+	// Vertical line
+	vertex_buffer_data[2*9*n] = 0.0f;
+	vertex_buffer_data[2*9*n+1] = radius + 0.3f;
+	vertex_buffer_data[2*9*n+2] = 0.02f;
+	vertex_buffer_data[2*9*n+3] = 0.0f;
+	vertex_buffer_data[2*9*n+4] = radius + 0.3f;
+	vertex_buffer_data[2*9*n+5] = -0.02f;
+	vertex_buffer_data[2*9*n+6] = 0.0f;
+	vertex_buffer_data[2*9*n+7] = -1*radius - 0.3f;
+	vertex_buffer_data[2*9*n+8] = 0.02f;
+
+	vertex_buffer_data[2*9*n+9] = 0.0f;
+	vertex_buffer_data[2*9*n+10] = radius + 0.3f;
+	vertex_buffer_data[2*9*n+11] = -0.02f;
+	vertex_buffer_data[2*9*n+12] = 0.0f;
+	vertex_buffer_data[2*9*n+13] = -1*radius - 0.3f;
+	vertex_buffer_data[2*9*n+14] = -0.02f;
+	vertex_buffer_data[2*9*n+15] = 0.0f;
+	vertex_buffer_data[2*9*n+16] = -1*radius - 0.3f;
+	vertex_buffer_data[2*9*n+17] = 0.02f;
+
+	// Horizontal line
+	vertex_buffer_data[2*9*n+18] = 0.0f;
+	vertex_buffer_data[2*9*n+19] = 0.02f;
+	vertex_buffer_data[2*9*n+20] = radius + 0.3f;
+	vertex_buffer_data[2*9*n+21] = 0.0f;
+	vertex_buffer_data[2*9*n+22] = -0.02f;
+	vertex_buffer_data[2*9*n+23] = radius + 0.3f;
+	vertex_buffer_data[2*9*n+24] = 0.0f;
+	vertex_buffer_data[2*9*n+25] = 0.02f;
+	vertex_buffer_data[2*9*n+26] = -1*radius - 0.3f;
+
+	vertex_buffer_data[2*9*n+27] = 0.0f;
+	vertex_buffer_data[2*9*n+28] = -0.02f;
+	vertex_buffer_data[2*9*n+29] = radius + 0.3f;
+	vertex_buffer_data[2*9*n+30] = 0.0f;
+	vertex_buffer_data[2*9*n+31] = -0.02f;
+	vertex_buffer_data[2*9*n+32] = -1*radius - 0.3f;
+	vertex_buffer_data[2*9*n+33] = 0.0f;
+	vertex_buffer_data[2*9*n+34] = 0.02f;
+	vertex_buffer_data[2*9*n+35] = -1*radius - 0.3f;
+
+
+    this->object = create3DObject(GL_TRIANGLES, 6*n+6+6, vertex_buffer_data, color, GL_FILL);
 }
 
 void Target::draw(glm::mat4 VP) {
