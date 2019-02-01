@@ -10,6 +10,7 @@ CMakeFiles/graphics_asgn1.dir/src/input.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/plane.h
+CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/target.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/timer.h
 
 CMakeFiles/graphics_asgn1.dir/src/nonedit.cpp.o: ../src/main.h
@@ -21,6 +22,10 @@ CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.o: ../src/other_handlers.cp
 CMakeFiles/graphics_asgn1.dir/src/plane.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn1.dir/src/plane.cpp.o: ../src/plane.cpp
 CMakeFiles/graphics_asgn1.dir/src/plane.cpp.o: ../src/plane.h
+
+CMakeFiles/graphics_asgn1.dir/src/target.cpp.o: ../src/main.h
+CMakeFiles/graphics_asgn1.dir/src/target.cpp.o: ../src/target.cpp
+CMakeFiles/graphics_asgn1.dir/src/target.cpp.o: ../src/target.h
 
 CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o: ../src/timer.cpp
 CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o: ../src/timer.h

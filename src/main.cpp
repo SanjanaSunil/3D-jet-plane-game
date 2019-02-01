@@ -1,6 +1,7 @@
 #include "main.h"
 #include "timer.h"
 #include "plane.h"
+#include "target.h"
 
 using namespace std;
 
@@ -13,6 +14,7 @@ GLFWwindow *window;
 **************************/
 
 Plane player;
+Target target_point;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
@@ -58,6 +60,10 @@ void draw() {
 
     // Scene render
     player.draw(VP);
+
+
+    // DRAW ONLY IF FRONT VIEW!!!!
+    target_point.draw(VP);
 }
 
 void tick_input(GLFWwindow *window) {
@@ -79,6 +85,12 @@ void tick_input(GLFWwindow *window) {
 
 void tick_elements() {
     player.tick();
+
+    // Target point move
+    target_point.position.x = player.position.x+2*player.width+2;
+    target_point.position.y = player.position.y;
+    target_point.position.z = player.position.z;
+
     camera_rotation_angle += 1;
 }
 
@@ -87,6 +99,8 @@ void initGL(GLFWwindow *window, int width, int height) {
     player       = Plane(0, 0, 4, 2, COLOR_RED);
     eye_x = player.position.x+2*player.width, eye_y = player.position.y, eye_z = player.position.z;
     target_x = player.position.x+10, target_y = 0, target_z = 0;
+
+    target_point = Target(player.position.x+2*player.width+2, player.position.y, 0.3, COLOR_BLACK);
 
     programID = LoadShaders("Sample_GL.vert", "Sample_GL.frag");
     Matrices.MatrixID = glGetUniformLocation(programID, "MVP");

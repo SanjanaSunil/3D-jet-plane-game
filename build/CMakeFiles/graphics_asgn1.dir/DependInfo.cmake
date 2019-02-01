@@ -4,13 +4,14 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/color.cpp" "/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/build/CMakeFiles/graphics_asgn1.dir/src/color.cpp.o"
-  "/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/input.cpp" "/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/build/CMakeFiles/graphics_asgn1.dir/src/input.cpp.o"
-  "/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/main.cpp" "/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/build/CMakeFiles/graphics_asgn1.dir/src/main.cpp.o"
-  "/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/nonedit.cpp" "/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/build/CMakeFiles/graphics_asgn1.dir/src/nonedit.cpp.o"
-  "/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/other_handlers.cpp" "/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/build/CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.o"
-  "/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/plane.cpp" "/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/build/CMakeFiles/graphics_asgn1.dir/src/plane.cpp.o"
-  "/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/timer.cpp" "/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/build/CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o"
+  "/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/color.cpp" "/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/graphics_asgn1.dir/src/color.cpp.o"
+  "/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/input.cpp" "/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/graphics_asgn1.dir/src/input.cpp.o"
+  "/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.cpp" "/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/graphics_asgn1.dir/src/main.cpp.o"
+  "/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/nonedit.cpp" "/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/graphics_asgn1.dir/src/nonedit.cpp.o"
+  "/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/other_handlers.cpp" "/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.o"
+  "/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/plane.cpp" "/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/graphics_asgn1.dir/src/plane.cpp.o"
+  "/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/target.cpp" "/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/graphics_asgn1.dir/src/target.cpp.o"
+  "/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/timer.cpp" "/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
