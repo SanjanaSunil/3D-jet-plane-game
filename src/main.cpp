@@ -65,17 +65,22 @@ void tick_input(GLFWwindow *window) {
     int one = glfwGetKey(window, GLFW_KEY_1);
     int two = glfwGetKey(window, GLFW_KEY_2);
 
-    int up = glfwGetKey(window, GLFW_KEY_W);
+    int up = glfwGetKey(window, GLFW_KEY_SPACE);
     int down = glfwGetKey(window, GLFW_KEY_S);
+    int forward = glfwGetKey(window, GLFW_KEY_W);
 
     if (up) {
-        player.position.y += 0.008;
+        player.position.y += player.speed;
     }
 
     if (down) {
-        player.position.y -= 0.008;
+        player.position.y -= player.speed;
     }
 
+    if (forward) {
+        player.position.z += player.speed;
+    }
+    
     // Front view - WILL NEED TO CHANGE ACCORDING TO THE TILT OF PLANE
     if (one) perspective = 1;
     // Tower view

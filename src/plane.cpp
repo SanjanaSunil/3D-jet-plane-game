@@ -6,7 +6,7 @@ Plane::Plane(float x, float y, float z, float height, float width, color_t color
     this->height = height;
     this->width = width;
     this->rotation = 0;
-    speed = 1;
+    speed = 0.008;
     
     int n = 1000;
     const float PI = 3.14159265359;
