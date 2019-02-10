@@ -1,8 +1,8 @@
 #include "main.h"
 #include "timer.h"
+#include "sea.h"
 #include "plane.h"
 #include "target.h"
-#include "ground.h"
 
 using namespace std;
 
@@ -14,21 +14,20 @@ GLFWwindow *window;
 * Customizable functions *
 **************************/
 
-Ground ocean;
-
+Sea sea;
 Plane player;
 Target target_point;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
 
-Timer t60(1.0 / 60);
-
 float eye_x, eye_y, eye_z;
 float target_x, target_y, target_z;
+float up_x, up_y, up_z;
 
-int perspective = 0;
+int perspective;
 
+Timer t60(1.0 / 60);
 
 void draw() {
     // clear the color and depth in the frame buffer
@@ -37,13 +36,11 @@ void draw() {
     // use the loaded shader program
     glUseProgram (programID);
 
-    // glm::vec3 eye ( 5*cos(camera_rotation_angle*M_PI/180.0f), 0, 5*sin(camera_rotation_angle*M_PI/180.0f) );
     glm::vec3 eye (eye_x, eye_y, eye_z);
     glm::vec3 target (target_x, target_y, target_z);
     glm::vec3 up (0, 1, 0);
 
-    // Compute Camera matrix (view)
-    Matrices.view = glm::lookAt( eye, target, up ); // Rotating Camera for 3D
+    Matrices.view = glm::lookAt( eye, target, up );
     // Matrices.view = glm::lookAt(glm::vec3(0, 0, 3), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0)); // Fixed camera for 2D (ortho) in XY plane
 
     // Compute ViewProject matrix as view/camera might not be changed for this frame (basic scenario)
@@ -51,64 +48,75 @@ void draw() {
 
     // Send our transformation to the currently bound shader, in the "MVP" uniform
     // For each model you render, since the MVP will be different (at least the M part)
+    // Don't change unless you are sure!!
     glm::mat4 MVP;  // MVP = Projection * View * Model
 
     // Scene render
+    sea.draw(VP);
     player.draw(VP);
 
-    ocean.draw(VP);
-    if(perspective==0) target_point.draw(VP);
+    if(perspective==1) target_point.draw(VP);
 }
 
 void tick_input(GLFWwindow *window) {
     int left  = glfwGetKey(window, GLFW_KEY_LEFT);
     int right = glfwGetKey(window, GLFW_KEY_RIGHT);
 
-    // Front view
-    if (left) {
+    int one = glfwGetKey(window, GLFW_KEY_1);
+    int two = glfwGetKey(window, GLFW_KEY_2);
+
+    // Front view - WILL NEED TO CHANGE ACCORDING TO THE TILT OF PLANE
+    if (one) {
+        perspective = 1;
         eye_x = player.position.x;
-        eye_y = player.position.y;
-        eye_z = player.position.z+2*player.width;
+        eye_y = player.position.y; 
+        eye_z = player.position.z + player.height/2 +player.width;
         target_x = player.position.x, target_y = player.position.y, target_z = player.position.z+10;
-        perspective = 0;
     }
 
     // Tower view
-    if (right) {
-        eye_x = 10, eye_y = 10, eye_z = 10;
+    if (two) {
+        perspective = 2;
+        eye_x = 40, eye_y = 7, eye_z = 40;
         target_x = player.position.x, target_y = player.position.y, target_z = player.position.z;
-        perspective = 1;
     }
 }
 
 void tick_elements() {
-    player.tick();
+    camera_rotation_angle += 1;
 
-    // Target point move
+    // WILL NEED TO CHANGE ACCORDING TO TILT OF PLANE
     target_point.position.x = player.position.x;
     target_point.position.y = player.position.y;
-    target_point.position.z = player.position.z+2*player.width+2;
-
-    camera_rotation_angle += 1;
+    target_point.position.z = player.position.z + player.height + player.width;
 }
 
+
 void initGL(GLFWwindow *window, int width, int height) {
+    /* Objects should be created before any other gl function and shaders */
+    // Create the models
 
-    ocean = Ground(0, 0, 0, COLOR_BLUE);
+    perspective = 1;
 
-    player = Plane(0, 0, 4, 2, COLOR_RED);
+    sea       = Sea(0, 0, 0, COLOR_BLUE);
+
+    player    = Plane(0, 0, 0, 4, 2, COLOR_RED);
     eye_x = player.position.x;
-    eye_y = player.position.y;
-    eye_z = player.position.z+2*player.width;
+    eye_y = player.position.y; 
+    eye_z = player.position.z + player.height/2 +player.width;
     target_x = player.position.x, target_y = player.position.y, target_z = player.position.z+10;
 
-    target_point = Target(player.position.x, player.position.y, 0.3, COLOR_BLACK);
+    target_point = Target(player.position.x, player.position.y, player.position.z, 0.3, COLOR_BLACK);
 
+    // Create and compile our GLSL program from the shaders
     programID = LoadShaders("Sample_GL.vert", "Sample_GL.frag");
+    // Get a handle for our "MVP" uniform
     Matrices.MatrixID = glGetUniformLocation(programID, "MVP");
+
 
     reshapeWindow (window, width, height);
 
+    // Background color of the scene
     glClearColor (COLOR_BACKGROUND.r / 256.0, COLOR_BACKGROUND.g / 256.0, COLOR_BACKGROUND.b / 256.0, 0.0f); // R, G, B, A
     glClearDepth (1.0f);
 

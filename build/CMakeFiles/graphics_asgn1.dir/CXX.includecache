@@ -6,21 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/color.cpp
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/color.cpp
 main.h
-/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/main.h
 
-/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/ground.cpp
-ground.h
-/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/ground.h
-main.h
-/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.h
-
-/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/ground.h
-main.h
-/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.h
-
-/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/input.cpp
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/input.cpp
 iostream
 -
 cmath
@@ -40,21 +30,21 @@ glm/gtx/transform.hpp
 glm/gtc/matrix_transform.hpp
 -
 main.h
-/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/main.h
 
-/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.cpp
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/main.cpp
 main.h
-/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/main.h
 timer.h
-/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/timer.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/timer.h
+sea.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/sea.h
 plane.h
-/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/plane.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/plane.h
 target.h
-/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/target.h
-ground.h
-/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/ground.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/target.h
 
-/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/main.h
 iostream
 -
 cmath
@@ -74,29 +64,7 @@ glm/gtx/transform.hpp
 glm/gtc/matrix_transform.hpp
 -
 
-/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/nonedit.cpp
-iostream
--
-cmath
--
-fstream
--
-vector
--
-GL/glew.h
--
-GLFW/glfw3.h
--
-glm/glm.hpp
--
-glm/gtx/transform.hpp
--
-glm/gtc/matrix_transform.hpp
--
-main.h
-/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.h
-
-/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/other_handlers.cpp
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/nonedit.cpp
 iostream
 -
 cmath
@@ -116,33 +84,65 @@ glm/gtx/transform.hpp
 glm/gtc/matrix_transform.hpp
 -
 main.h
-/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/main.h
 
-/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/plane.cpp
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/other_handlers.cpp
+iostream
+-
+cmath
+-
+fstream
+-
+vector
+-
+GL/glew.h
+-
+GLFW/glfw3.h
+-
+glm/glm.hpp
+-
+glm/gtx/transform.hpp
+-
+glm/gtc/matrix_transform.hpp
+-
+main.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/main.h
+
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/plane.cpp
 plane.h
-/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/plane.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/plane.h
 main.h
-/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/main.h
 
-/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/plane.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/plane.h
 main.h
-/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/main.h
 
-/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/target.cpp
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/sea.cpp
+sea.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/sea.h
+main.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/main.h
+
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/sea.h
+main.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/main.h
+
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/target.cpp
 target.h
-/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/target.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/target.h
 main.h
-/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/main.h
 
-/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/target.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/target.h
 main.h
-/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/main.h
 
-/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/timer.cpp
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/timer.cpp
 timer.h
-/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/timer.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/timer.h
 GLFW/glfw3.h
 -
 
-/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/timer.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/src/timer.h
 

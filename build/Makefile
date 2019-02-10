@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game
+CMAKE_SOURCE_DIR = /home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build
+CMAKE_BINARY_DIR = /home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/build/CMakeFiles /home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sanjanasunil/subjects/graphics/assignments/2-assign/graphics-boilerplate/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -149,33 +149,6 @@ src/color.s: src/color.cpp.s
 src/color.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/color.cpp.s
 .PHONY : src/color.cpp.s
-
-src/ground.o: src/ground.cpp.o
-
-.PHONY : src/ground.o
-
-# target to build an object file
-src/ground.cpp.o:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/ground.cpp.o
-.PHONY : src/ground.cpp.o
-
-src/ground.i: src/ground.cpp.i
-
-.PHONY : src/ground.i
-
-# target to preprocess a source file
-src/ground.cpp.i:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/ground.cpp.i
-.PHONY : src/ground.cpp.i
-
-src/ground.s: src/ground.cpp.s
-
-.PHONY : src/ground.s
-
-# target to generate assembly for a file
-src/ground.cpp.s:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/ground.cpp.s
-.PHONY : src/ground.cpp.s
 
 src/input.o: src/input.cpp.o
 
@@ -312,6 +285,33 @@ src/plane.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/plane.cpp.s
 .PHONY : src/plane.cpp.s
 
+src/sea.o: src/sea.cpp.o
+
+.PHONY : src/sea.o
+
+# target to build an object file
+src/sea.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/sea.cpp.o
+.PHONY : src/sea.cpp.o
+
+src/sea.i: src/sea.cpp.i
+
+.PHONY : src/sea.i
+
+# target to preprocess a source file
+src/sea.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/sea.cpp.i
+.PHONY : src/sea.cpp.i
+
+src/sea.s: src/sea.cpp.s
+
+.PHONY : src/sea.s
+
+# target to generate assembly for a file
+src/sea.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/sea.cpp.s
+.PHONY : src/sea.cpp.s
+
 src/target.o: src/target.cpp.o
 
 .PHONY : src/target.o
@@ -378,9 +378,6 @@ help:
 	@echo "... src/color.o"
 	@echo "... src/color.i"
 	@echo "... src/color.s"
-	@echo "... src/ground.o"
-	@echo "... src/ground.i"
-	@echo "... src/ground.s"
 	@echo "... src/input.o"
 	@echo "... src/input.i"
 	@echo "... src/input.s"
@@ -396,6 +393,9 @@ help:
 	@echo "... src/plane.o"
 	@echo "... src/plane.i"
 	@echo "... src/plane.s"
+	@echo "... src/sea.o"
+	@echo "... src/sea.i"
+	@echo "... src/sea.s"
 	@echo "... src/target.o"
 	@echo "... src/target.i"
 	@echo "... src/target.s"

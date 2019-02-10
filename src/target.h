@@ -7,7 +7,7 @@
 class Target {
 public:
     Target() {}
-    Target(float x, float y, float radius, color_t color);
+    Target(float x, float y, float z, float radius, color_t color);
     glm::vec3 position;
     float radius;
     float rotation;

@@ -7,7 +7,7 @@
 class Plane {
 public:
     Plane() {}
-    Plane(float x, float y, float height, float width, color_t color);
+    Plane(float x, float y, float z, float height, float width, color_t color);
     glm::vec3 position;
     float height, width;
     float rotation;
@@ -19,4 +19,4 @@ private:
     VAO *object;
 };
 
-#endif // PLANE_H
+#endif 

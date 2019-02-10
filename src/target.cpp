@@ -1,8 +1,8 @@
 #include "target.h"
 #include "main.h"
 
-Target::Target(float x, float y, float radius, color_t color) {
-    this->position = glm::vec3(x, y, 0);
+Target::Target(float x, float y, float z, float radius, color_t color) {
+    this->position = glm::vec3(x, y, z);
     this->radius = radius;
     this->rotation = 0;
 

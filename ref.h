@@ -1,20 +1,21 @@
 #include "main.h"
 
-#ifndef GROUND_H
-#define GROUND_H
+#ifndef BALL_H
+#define BALL_H
 
 
-class Ground {
+class Ball {
 public:
-    Ground() {}
-    Ground(float x, float y, float z, color_t color);
+    Ball() {}
+    Ball(float x, float y, color_t color);
     glm::vec3 position;
     float rotation;
     void draw(glm::mat4 VP);
     void set_position(float x, float y);
     void tick();
+    double speed;
 private:
     VAO *object;
 };
 
-#endif 
+#endif // BALL_H
