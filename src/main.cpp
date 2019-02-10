@@ -69,11 +69,11 @@ void tick_input(GLFWwindow *window) {
     int down = glfwGetKey(window, GLFW_KEY_S);
 
     if (up) {
-        player.position.y += 0.03;
+        player.position.y += 0.008;
     }
 
     if (down) {
-        player.position.y -= 0.03;
+        player.position.y -= 0.008;
     }
 
     // Front view - WILL NEED TO CHANGE ACCORDING TO THE TILT OF PLANE
