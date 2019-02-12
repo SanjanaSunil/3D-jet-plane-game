@@ -122,7 +122,7 @@ void initGL(GLFWwindow *window, int width, int height) {
 
     sea       = Sea(0, 0, 0, COLOR_BLUE);
 
-    player    = Plane(0, 0, 0, 4, 2, COLOR_RED);
+    player    = Plane(0, 0, 0, 7, 1, COLOR_RED);
     eye_x = player.position.x;
     eye_y = player.position.y; 
     eye_z = player.position.z + player.height/2 +player.width;
