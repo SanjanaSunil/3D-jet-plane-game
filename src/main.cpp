@@ -71,8 +71,8 @@ void tick_input(GLFWwindow *window) {
 
     if (up) player.position.y += player.speed;
     if (down) player.position.y -= player.speed;
-    if (left) player.rotation.y = -1;
-    if (right) player.rotation.y = 1;
+    if (left) player.rotation.z = -1;
+    if (right) player.rotation.z = 1;
     if (forward) player.position.z += player.speed;
 
     // Front view - WILL NEED TO CHANGE ACCORDING TO THE TILT OF PLANE
@@ -89,11 +89,13 @@ void tick_elements() {
     if(perspective==1) {
         cam_eye = player.find_relative_pos(glm::vec3(0, 0, player.height/2+player.width));
         cam_target = target_point.position;
+        cam_up = player.find_relative_pos(glm::vec3(0, 1, 0)) - player.position;
     }
 
     if(perspective==2) {
         cam_eye = glm::vec3(20, 7, 20);
         cam_target = player.position;
+        cam_up = glm::vec3(0, 1, 0);
     }
 
 }
@@ -102,13 +104,13 @@ void tick_elements() {
 void initGL(GLFWwindow *window, int width, int height) {
 
     perspective = 1;
-    cam_up = glm::vec3(0, 1, 0);
 
     sea       = Sea(0, 0, 0, COLOR_BLUE);
 
     player    = Plane(0, 5, 0, 7, 1, COLOR_RED);
     cam_eye = glm::vec3(0, 0, player.height/2+player.width);
     cam_target = glm::vec3(0, 0, player.position.z+10);
+    cam_up = glm::vec3(0, 1, 0);
 
     target_point = Target(0, 0, player.height+player.width, 0.2, COLOR_BLACK);
 
@@ -171,6 +173,5 @@ void reset_screen() {
     float bottom = screen_center_y - 4 / screen_zoom;
     float left   = screen_center_x - 4 / screen_zoom;
     float right  = screen_center_x + 4 / screen_zoom;
-    // Matrices.projection = glm::ortho(left, right, bottom, top, 0.1f, 500.0f);
     Matrices.projection = glm::perspective(glm::radians(60.0f), 1.0f, 0.1f, 500.0f);
 }
