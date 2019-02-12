@@ -1,0 +1,53 @@
+ifstream ip("suzanne.obj");
+    string line;
+
+    vector<float> vertices;
+    vector<float> coords;
+    while(getline(ip, line)) 
+    {
+        if(line[0]=='v' && line[1]==' ') 
+        {
+            int len = line.size();
+            for(int i=2; i<len; ++i)
+            {
+                string str_val = "";
+                while(line[i]!='\0' && line[i]!=' ')
+                {
+                    str_val.push_back(line[i]);
+                    i++;
+                }
+                float val = stof(str_val);
+                vertices.push_back(val);
+            }
+            
+        }
+
+        if(line[0]=='f')
+        {
+            int len = line.size();
+            for(int i=0; i<len; ++i)
+            {
+                if(line[i]==' ')
+                {
+                    i++;
+                    string str_val = "";
+                    while(line[i]!='/' && i<len) 
+                    {
+                        str_val.push_back(line[i]);
+                        i++;
+                    }
+                    int val = stoi(str_val);
+                    coords.push_back(vertices[val*3-3]);
+                    coords.push_back(vertices[val*3-2]);
+                    coords.push_back(vertices[val*3-1]);
+                }
+            }
+        }
+    }
+
+    int total_len = (int) coords.size();
+    GLfloat vertex_buffer_data[total_len+10];
+
+    for(int i=0; i<coords.size(); ++i) vertex_buffer_data[i] = coords[i];
+
+    this->object = create3DObject(GL_TRIANGLES, total_len/3, vertex_buffer_data, color, GL_FILL);

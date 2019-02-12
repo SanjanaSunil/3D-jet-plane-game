@@ -80,15 +80,14 @@ void tick_input(GLFWwindow *window) {
     if (forward) {
         player.position.z += player.speed;
     }
-    
+
     // Front view - WILL NEED TO CHANGE ACCORDING TO THE TILT OF PLANE
     if (one) perspective = 1;
     // Tower view
     if (two) perspective = 2;
 }
 
-void tick_elements() {
-    camera_rotation_angle += 1;
+void change_view() {
 
     if(perspective==1) {
         eye_x = player.position.x;
@@ -96,11 +95,18 @@ void tick_elements() {
         eye_z = player.position.z + player.height/2 +player.width;
         target_x = player.position.x, target_y = player.position.y, target_z = player.position.z+10;
     }
+
     if(perspective==2) {
         eye_x = 40, eye_y = 7, eye_z = 40;
         target_x = player.position.x, target_y = player.position.y, target_z = player.position.z;
     }
+}
 
+void tick_elements() {
+    camera_rotation_angle += 1;
+
+    change_view();
+    
     // WILL NEED TO CHANGE ACCORDING TO TILT OF PLANE
     target_point.position.x = player.position.x;
     target_point.position.y = player.position.y;
