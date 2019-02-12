@@ -36,10 +36,6 @@ void draw() {
     // use the loaded shader program
     glUseProgram (programID);
 
-    // glm::vec3 eye (eye_x, eye_y, eye_z);
-    // glm::vec3 target (target_x, target_y, target_z);
-    // glm::vec3 up (0, 1, 0);
-
     Matrices.view = glm::lookAt( cam_eye, cam_target, cam_up );
     // Matrices.view = glm::lookAt(glm::vec3(0, 0, 3), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0)); // Fixed camera for 2D (ortho) in XY plane
 
@@ -48,7 +44,6 @@ void draw() {
 
     // Send our transformation to the currently bound shader, in the "MVP" uniform
     // For each model you render, since the MVP will be different (at least the M part)
-    // Don't change unless you are sure!!
     glm::mat4 MVP;  // MVP = Projection * View * Model
 
     // Scene render
@@ -75,7 +70,7 @@ void tick_input(GLFWwindow *window) {
     if (right) player.rotation.z = 1;
     if (forward) player.position.z += player.speed;
 
-    // Front view - WILL NEED TO CHANGE ACCORDING TO THE TILT OF PLANE
+    // Front view
     if (one) perspective = 1;
     // Tower view
     if (two) perspective = 2;
@@ -147,7 +142,6 @@ int main(int argc, char **argv) {
 
         if (t60.processTick()) {
             // 60 fps
-            // OpenGL Draw commands
             draw();
             // Swap Frame Buffer in double buffering
             glfwSwapBuffers(window);
