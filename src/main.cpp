@@ -65,9 +65,9 @@ void tick_input(GLFWwindow *window) {
     int one = glfwGetKey(window, GLFW_KEY_1);
     int two = glfwGetKey(window, GLFW_KEY_2);
 
-    int up = glfwGetKey(window, GLFW_KEY_SPACE);
+    int up = glfwGetKey(window, GLFW_KEY_W);
     int down = glfwGetKey(window, GLFW_KEY_S);
-    int forward = glfwGetKey(window, GLFW_KEY_W);
+    int forward = glfwGetKey(window, GLFW_KEY_SPACE);
 
     if (up) {
         player.position.y += player.speed;
@@ -97,7 +97,7 @@ void change_view() {
     }
 
     if(perspective==2) {
-        eye_x = 40, eye_y = 7, eye_z = 40;
+        eye_x = 20, eye_y = 7, eye_z = 20;
         target_x = player.position.x, target_y = player.position.y, target_z = player.position.z;
     }
 }
@@ -122,13 +122,13 @@ void initGL(GLFWwindow *window, int width, int height) {
 
     sea       = Sea(0, 0, 0, COLOR_BLUE);
 
-    player    = Plane(0, 0, 0, 7, 1, COLOR_RED);
+    player    = Plane(0, 5, 0, 7, 1, COLOR_RED);
     eye_x = player.position.x;
     eye_y = player.position.y; 
     eye_z = player.position.z + player.height/2 +player.width;
     target_x = player.position.x, target_y = player.position.y, target_z = player.position.z+10;
 
-    target_point = Target(player.position.x, player.position.y, player.position.z, 0.3, COLOR_BLACK);
+    target_point = Target(player.position.x, player.position.y, player.position.z, 0.2, COLOR_BLACK);
 
     // Create and compile our GLSL program from the shaders
     programID = LoadShaders("Sample_GL.vert", "Sample_GL.frag");

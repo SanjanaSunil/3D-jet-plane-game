@@ -16,7 +16,7 @@ Target::Target(float x, float y, float z, float radius, color_t color) {
 	GLfloat x2 = cos(angle)*x1 - sin(angle)*y1;
 	GLfloat y2 = sin(angle)*x1 + cos(angle)*y1;
 
-    GLfloat inner_x1 = radius - 0.1f, inner_y1 = 0.0f;
+    GLfloat inner_x1 = radius - 0.05f, inner_y1 = 0.0f;
 	GLfloat inner_x2 = cos(angle)*inner_x1 - sin(angle)*inner_y1;
 	GLfloat inner_y2 = sin(angle)*inner_x1 + cos(angle)*inner_y1;
 
@@ -61,43 +61,43 @@ Target::Target(float x, float y, float z, float radius, color_t color) {
 
 	// Vertical line
 	vertex_buffer_data[2*9*n] = radius + 0.3f;
-	vertex_buffer_data[2*9*n+1] = 0.02f;
+	vertex_buffer_data[2*9*n+1] = 0.008f;
 	vertex_buffer_data[2*9*n+2] = 0.0f;
 	vertex_buffer_data[2*9*n+3] = radius + 0.3f;
-	vertex_buffer_data[2*9*n+4] = -0.02f;
+	vertex_buffer_data[2*9*n+4] = -0.008f;
 	vertex_buffer_data[2*9*n+5] = 0.0f;
 	vertex_buffer_data[2*9*n+6] = -1*radius - 0.3f;
-	vertex_buffer_data[2*9*n+7] = 0.02f;
+	vertex_buffer_data[2*9*n+7] = 0.008f;
 	vertex_buffer_data[2*9*n+8] = 0.0f;
 
 	vertex_buffer_data[2*9*n+9] = radius + 0.3f;
-	vertex_buffer_data[2*9*n+10] = -0.02f;
+	vertex_buffer_data[2*9*n+10] = -0.008f;
 	vertex_buffer_data[2*9*n+11] = 0.0f;
 	vertex_buffer_data[2*9*n+12] = -1*radius - 0.3f;
-	vertex_buffer_data[2*9*n+13] = -0.02f;
+	vertex_buffer_data[2*9*n+13] = -0.008f;
 	vertex_buffer_data[2*9*n+14] = 0.0f;
 	vertex_buffer_data[2*9*n+15] = -1*radius - 0.3f;
-	vertex_buffer_data[2*9*n+16] = 0.02f;
+	vertex_buffer_data[2*9*n+16] = 0.008f;
 	vertex_buffer_data[2*9*n+17] = 0.0f;
 
 	// Horizontal line
-	vertex_buffer_data[2*9*n+18] = 0.02f;
+	vertex_buffer_data[2*9*n+18] = 0.008f;
 	vertex_buffer_data[2*9*n+19] = radius + 0.3f;
 	vertex_buffer_data[2*9*n+20] = 0.0f;
-	vertex_buffer_data[2*9*n+21] = -0.02f;
+	vertex_buffer_data[2*9*n+21] = -0.008f;
 	vertex_buffer_data[2*9*n+22] = radius + 0.3f;
 	vertex_buffer_data[2*9*n+23] = 0.0f;
-	vertex_buffer_data[2*9*n+24] = 0.02f;
+	vertex_buffer_data[2*9*n+24] = 0.008f;
 	vertex_buffer_data[2*9*n+25] = -1*radius - 0.3f;
 	vertex_buffer_data[2*9*n+26] = 0.0f;
 
-	vertex_buffer_data[2*9*n+27] = -0.02f;
+	vertex_buffer_data[2*9*n+27] = -0.008f;
 	vertex_buffer_data[2*9*n+28] = radius + 0.3f;
 	vertex_buffer_data[2*9*n+29] = 0.0f;
-	vertex_buffer_data[2*9*n+30] = -0.02f;
+	vertex_buffer_data[2*9*n+30] = -0.008f;
 	vertex_buffer_data[2*9*n+31] = -1*radius - 0.3f;
 	vertex_buffer_data[2*9*n+32] = 0.0f;
-	vertex_buffer_data[2*9*n+33] = 0.02f;
+	vertex_buffer_data[2*9*n+33] = 0.008f;
 	vertex_buffer_data[2*9*n+34] = -1*radius - 0.3f;
 	vertex_buffer_data[2*9*n+35] = 0.0f;
 
