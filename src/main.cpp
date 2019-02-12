@@ -54,8 +54,6 @@ void draw() {
 }
 
 void tick_input(GLFWwindow *window) {
-    int left  = glfwGetKey(window, GLFW_KEY_A);
-    int right = glfwGetKey(window, GLFW_KEY_D);
 
     int one = glfwGetKey(window, GLFW_KEY_1);
     int two = glfwGetKey(window, GLFW_KEY_2);
@@ -63,11 +61,17 @@ void tick_input(GLFWwindow *window) {
     int up = glfwGetKey(window, GLFW_KEY_W);
     int down = glfwGetKey(window, GLFW_KEY_S);
     int forward = glfwGetKey(window, GLFW_KEY_SPACE);
+    int tilt_left  = glfwGetKey(window, GLFW_KEY_A);
+    int tilt_right = glfwGetKey(window, GLFW_KEY_D);
+    int rotate_left  = glfwGetKey(window, GLFW_KEY_Q);
+    int rotate_right = glfwGetKey(window, GLFW_KEY_E);
 
     if (up) player.position.y += player.speed;
     if (down) player.position.y -= player.speed;
-    if (left) player.rotation.z = -1;
-    if (right) player.rotation.z = 1;
+    if (tilt_left) player.rotation.z = -1;
+    if (tilt_right) player.rotation.z = 1;
+    if (rotate_left) player.rotation.y = -1;
+    if (rotate_right) player.rotation.y = 1;
     if (forward) player.position.z += player.speed;
 
     // Front view
