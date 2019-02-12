@@ -21,9 +21,9 @@ Target target_point;
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
 
-float eye_x, eye_y, eye_z;
-float target_x, target_y, target_z;
-float up_x, up_y, up_z;
+glm::vec3 cam_eye;
+glm::vec3 cam_target;
+glm::vec3 cam_up;
 
 int perspective;
 
@@ -36,11 +36,11 @@ void draw() {
     // use the loaded shader program
     glUseProgram (programID);
 
-    glm::vec3 eye (eye_x, eye_y, eye_z);
-    glm::vec3 target (target_x, target_y, target_z);
-    glm::vec3 up (0, 1, 0);
+    // glm::vec3 eye (eye_x, eye_y, eye_z);
+    // glm::vec3 target (target_x, target_y, target_z);
+    // glm::vec3 up (0, 1, 0);
 
-    Matrices.view = glm::lookAt( eye, target, up );
+    Matrices.view = glm::lookAt( cam_eye, cam_target, cam_up );
     // Matrices.view = glm::lookAt(glm::vec3(0, 0, 3), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0)); // Fixed camera for 2D (ortho) in XY plane
 
     // Compute ViewProject matrix as view/camera might not be changed for this frame (basic scenario)
@@ -55,12 +55,12 @@ void draw() {
     sea.draw(VP);
     player.draw(VP);
 
-    if(perspective==1) target_point.draw(VP);
+    if(perspective==1) target_point.draw(VP, player.axis_rotated);
 }
 
 void tick_input(GLFWwindow *window) {
-    int left  = glfwGetKey(window, GLFW_KEY_LEFT);
-    int right = glfwGetKey(window, GLFW_KEY_RIGHT);
+    int left  = glfwGetKey(window, GLFW_KEY_A);
+    int right = glfwGetKey(window, GLFW_KEY_D);
 
     int one = glfwGetKey(window, GLFW_KEY_1);
     int two = glfwGetKey(window, GLFW_KEY_2);
@@ -69,17 +69,11 @@ void tick_input(GLFWwindow *window) {
     int down = glfwGetKey(window, GLFW_KEY_S);
     int forward = glfwGetKey(window, GLFW_KEY_SPACE);
 
-    if (up) {
-        player.position.y += player.speed;
-    }
-
-    if (down) {
-        player.position.y -= player.speed;
-    }
-
-    if (forward) {
-        player.position.z += player.speed;
-    }
+    if (up) player.position.y += player.speed;
+    if (down) player.position.y -= player.speed;
+    if (left) player.rotation.y = -1;
+    if (right) player.rotation.y = 1;
+    if (forward) player.position.z += player.speed;
 
     // Front view - WILL NEED TO CHANGE ACCORDING TO THE TILT OF PLANE
     if (one) perspective = 1;
@@ -87,58 +81,43 @@ void tick_input(GLFWwindow *window) {
     if (two) perspective = 2;
 }
 
-void change_view() {
-
-    if(perspective==1) {
-        eye_x = player.position.x;
-        eye_y = player.position.y; 
-        eye_z = player.position.z + player.height/2 +player.width;
-        target_x = player.position.x, target_y = player.position.y, target_z = player.position.z+10;
-    }
-
-    if(perspective==2) {
-        eye_x = 20, eye_y = 7, eye_z = 20;
-        target_x = player.position.x, target_y = player.position.y, target_z = player.position.z;
-    }
-}
-
 void tick_elements() {
     camera_rotation_angle += 1;
 
-    change_view();
-    
-    // WILL NEED TO CHANGE ACCORDING TO TILT OF PLANE
-    target_point.position.x = player.position.x;
-    target_point.position.y = player.position.y;
-    target_point.position.z = player.position.z + player.height + player.width;
+    target_point.position = player.find_relative_pos(glm::vec3(0, 0, player.height+player.width));
+
+    if(perspective==1) {
+        cam_eye = player.find_relative_pos(glm::vec3(0, 0, player.height/2+player.width));
+        cam_target = target_point.position;
+    }
+
+    if(perspective==2) {
+        cam_eye = glm::vec3(20, 7, 20);
+        cam_target = player.position;
+    }
+
 }
 
 
 void initGL(GLFWwindow *window, int width, int height) {
-    /* Objects should be created before any other gl function and shaders */
-    // Create the models
 
     perspective = 1;
+    cam_up = glm::vec3(0, 1, 0);
 
     sea       = Sea(0, 0, 0, COLOR_BLUE);
 
     player    = Plane(0, 5, 0, 7, 1, COLOR_RED);
-    eye_x = player.position.x;
-    eye_y = player.position.y; 
-    eye_z = player.position.z + player.height/2 +player.width;
-    target_x = player.position.x, target_y = player.position.y, target_z = player.position.z+10;
+    cam_eye = glm::vec3(0, 0, player.height/2+player.width);
+    cam_target = glm::vec3(0, 0, player.position.z+10);
 
-    target_point = Target(player.position.x, player.position.y, player.position.z, 0.2, COLOR_BLACK);
+    target_point = Target(0, 0, player.height+player.width, 0.2, COLOR_BLACK);
 
-    // Create and compile our GLSL program from the shaders
     programID = LoadShaders("Sample_GL.vert", "Sample_GL.frag");
-    // Get a handle for our "MVP" uniform
     Matrices.MatrixID = glGetUniformLocation(programID, "MVP");
 
 
     reshapeWindow (window, width, height);
 
-    // Background color of the scene
     glClearColor (COLOR_BACKGROUND.r / 256.0, COLOR_BACKGROUND.g / 256.0, COLOR_BACKGROUND.b / 256.0, 0.0f); // R, G, B, A
     glClearDepth (1.0f);
 
