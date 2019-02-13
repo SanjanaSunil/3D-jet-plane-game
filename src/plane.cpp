@@ -4,11 +4,12 @@
 Plane::Plane(float x, float y, float z, float height, float width, color_t color) {
     this->position = glm::vec3(x, y, z);
     this->rotation = glm::vec3(0, 0, 0);
+    this->speed = glm::vec3(0, 0, 0.01);
     this->axis_rotated = glm::mat4(1.0f);
 
     this->height = height;
     this->width = width;
-    speedz = 0.01;
+    speedy = 0.01;
     
     int n = 1000;
     const float PI = 3.14159265359;

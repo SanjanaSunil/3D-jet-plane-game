@@ -10,13 +10,14 @@ public:
     Plane(float x, float y, float z, float height, float width, color_t color);
     glm::vec3 position;
     glm::vec3 rotation;
+    glm::vec3 speed;
     glm::mat4 axis_rotated;
     float height, width;
     void draw(glm::mat4 VP);
     glm::vec3 find_relative_pos(glm::vec3 obj_pos);
     void set_position(float x, float y);
     void tick();
-    double speedz;
+    double speedy;
 private:
     VAO *object;
 };
