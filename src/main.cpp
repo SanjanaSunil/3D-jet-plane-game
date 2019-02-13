@@ -66,13 +66,13 @@ void tick_input(GLFWwindow *window) {
     int rotate_left  = glfwGetKey(window, GLFW_KEY_Q);
     int rotate_right = glfwGetKey(window, GLFW_KEY_E);
 
-    if (up) player.position.y += player.speed;
-    if (down) player.position.y -= player.speed;
+    if (up) player.position.y += player.speedz;
+    if (down) player.position.y -= player.speedz;
     if (tilt_left) player.rotation.z = -1;
     if (tilt_right) player.rotation.z = 1;
     if (rotate_left) player.rotation.y = -1;
     if (rotate_right) player.rotation.y = 1;
-    if (forward) player.position.z += player.speed;
+    if (forward) player.position.z += player.speedz;
 
     // Front view
     if (one) perspective = 1;

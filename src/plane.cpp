@@ -8,7 +8,7 @@ Plane::Plane(float x, float y, float z, float height, float width, color_t color
 
     this->height = height;
     this->width = width;
-    speed = 0.01;
+    speedz = 0.01;
     
     int n = 1000;
     const float PI = 3.14159265359;

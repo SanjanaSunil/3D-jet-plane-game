@@ -16,7 +16,7 @@ public:
     glm::vec3 find_relative_pos(glm::vec3 obj_pos);
     void set_position(float x, float y);
     void tick();
-    double speed;
+    double speedz;
 private:
     VAO *object;
 };
