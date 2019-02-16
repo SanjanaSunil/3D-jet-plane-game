@@ -7,6 +7,9 @@
 #include <cmath>
 #include <fstream>
 #include <vector>
+#include <map>
+#include <string>
+#include <utility>
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
@@ -37,9 +40,15 @@ void mouseButton(GLFWwindow *window, int button, int action, int mods);
 void scroll_callback(GLFWwindow *window, double xoffset, double yoffset);
 
 // other_handlers.cpp
+struct VertexData {
+    GLfloat* vertex_buffer_data;
+    GLfloat* color_buffer_data;
+    int length;
+};
 void error_callback(int error, const char *description);
 void quit(GLFWwindow *window);
 void reshapeWindow(GLFWwindow *window, int width, int height);
+VertexData getVertexData(std::string mtlfile, std::string objfile);
 
 // Types
 struct VAO {
