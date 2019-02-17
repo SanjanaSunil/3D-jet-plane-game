@@ -68,6 +68,7 @@ void tick_input(GLFWwindow *window) {
     int one = glfwGetKey(window, GLFW_KEY_1);
     int two = glfwGetKey(window, GLFW_KEY_2);
     int three = glfwGetKey(window, GLFW_KEY_3);
+    int four = glfwGetKey(window, GLFW_KEY_4);
 
     int up = glfwGetKey(window, GLFW_KEY_W);
     int down = glfwGetKey(window, GLFW_KEY_S);
@@ -95,6 +96,8 @@ void tick_input(GLFWwindow *window) {
     if (two) perspective = 2;
     // Follow cam view
     if (three) perspective = 3;
+    // Top view
+    if (four) perspective = 4;
 }
 
 void tick_elements() {
@@ -118,6 +121,12 @@ void tick_elements() {
         cam_eye = player.find_relative_pos(glm::vec3(0, 3.5f, -6-player.width));
         cam_target = player.position;
         cam_up = player.find_relative_pos(glm::vec3(0, 1, 0)) - player.position;
+    }
+
+    if(perspective==4) {
+        cam_eye = glm::vec3(0, player.position.y+30, 0);
+        cam_target = player.position;
+        cam_up = glm::vec3(0, 0, 1);
     }
 
     // Check altitude
