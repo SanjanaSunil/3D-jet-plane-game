@@ -18,6 +18,7 @@ public:
     glm::vec3 find_relative_pos(glm::vec3 obj_pos);
     void set_position(float x, float y);
     void tick();
+    bounding_box_t get_dimensions();
     double speedy;
 private:
     VAO *object;

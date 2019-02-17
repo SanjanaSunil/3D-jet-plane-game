@@ -129,13 +129,6 @@ void tick_elements() {
         cam_up = glm::vec3(0, 0, 1);
     }
 
-    // Check altitude
-    dashboard.set_altitude_level(player.position.y, player.max_height);
-
-    // Check for death
-    if(dashboard.fuel_scale.x<=0.0f) quit(window); //Fuel check
-    if(player.position.y>player.max_height || player.position.y<0) quit(window);
-
     // Parachute enemy
     if(!parachute_enemy.present) parachute_enemy.counter += 1;
     if(!parachute_enemy.present && parachute_enemy.counter%1200==0)
@@ -145,6 +138,14 @@ void tick_elements() {
         parachute_enemy.position = player.find_relative_pos(glm::vec3(0, 5, player.height+player.width+7));
     }
     if(parachute_enemy.present) parachute_enemy.fall();
+
+    // Check altitude
+    dashboard.set_altitude_level(player.position.y, player.max_height);
+
+    // Check for death
+    if(dashboard.fuel_scale.x<=0.0f) quit(window); //Fuel check
+    if(player.position.y>player.max_height || player.position.y<0) quit(window);
+    if(detect_collision(player.get_dimensions(), parachute_enemy.get_dimensions())) quit(window);
 }
 
 
@@ -221,7 +222,8 @@ int main(int argc, char **argv) {
 
 bool detect_collision(bounding_box_t a, bounding_box_t b) {
     return (abs(a.x - b.x) * 2 < (a.width + b.width)) &&
-           (abs(a.y - b.y) * 2 < (a.height + b.height));
+           (abs(a.y - b.y) * 2 < (a.height + b.height)) &&
+           (abs(a.z - b.z) * 2 < (a.depth + b.depth));
 }
 
 void reset_screen() {

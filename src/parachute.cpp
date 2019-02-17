@@ -31,6 +31,10 @@ void Parachute::set_position(float x, float y, float z) {
     this->position = glm::vec3(x, y, z);
 }
 
+bounding_box_t Parachute::get_dimensions() {
+    return {position.x, position.y, position.z, 1.5f, 1.5f, 1.5f};
+}
+
 void Parachute::tick() {
     // this->rotation += speed;
     // this->position.x -= speed;

@@ -16,6 +16,7 @@ public:
     void set_position(float x, float y, float z);
     void tick();
     void fall();
+    bounding_box_t get_dimensions();
     double speed;
 private:
     VAO *object;

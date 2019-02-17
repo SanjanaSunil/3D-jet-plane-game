@@ -42,6 +42,10 @@ void Plane::set_position(float x, float y) {
     this->position = glm::vec3(x, y, 0);
 }
 
+bounding_box_t Plane::get_dimensions() {
+    return {position.x, position.y, position.z, 4.0f, 4.0f, 9.0f};
+}
+
 void Plane::tick() {
     // this->rotation += speed;
     // this->position.x -= speed;
