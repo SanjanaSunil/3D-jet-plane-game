@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/graphics_asgn1.dir/src/main.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/nonedit.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.o"
+  "CMakeFiles/graphics_asgn1.dir/src/parachute.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/plane.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/sea.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/target.cpp.o"

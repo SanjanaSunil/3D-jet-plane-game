@@ -3,6 +3,7 @@
 #include "sea.h"
 #include "plane.h"
 #include "dashboard.h"
+#include "parachute.h"
 #include "target.h"
 
 using namespace std;
@@ -19,6 +20,7 @@ GLFWwindow *window;
 Sea sea;
 Plane player;
 Dashboard dashboard;
+Parachute parachute_enemy;
 Target target_point;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
@@ -54,6 +56,8 @@ void draw() {
     // Scene render
     sea.draw(VP);
     player.draw(VP);
+
+    if(parachute_enemy.present) parachute_enemy.draw(VP);
 
     // if(perspective==1) target_point.draw(VP, player.axis_rotated);
     dashboard.draw(FVP);
@@ -122,6 +126,16 @@ void tick_elements() {
     // Check for death
     if(dashboard.fuel_scale.x<=0.0f) quit(window); //Fuel check
     if(player.position.y>player.max_height || player.position.y<0) quit(window);
+
+    // Parachute enemy
+    if(!parachute_enemy.present) parachute_enemy.counter += 1;
+    if(!parachute_enemy.present && parachute_enemy.counter%1200==0)
+    {
+        parachute_enemy.counter = 0;
+        parachute_enemy.present = true;
+        parachute_enemy.position = player.find_relative_pos(glm::vec3(0, 0, player.height+player.width+7));
+    }
+    if(parachute_enemy.present) parachute_enemy.fall();
 }
 
 
@@ -140,6 +154,8 @@ void initGL(GLFWwindow *window, int width, int height) {
 
     dashboard = Dashboard(0, 0, 0, player.position.y, player.max_height);
     target_point = Target(0, 0, player.height+player.width, 0.2, COLOR_BLACK);
+
+    parachute_enemy = Parachute(0, 0, player.height+player.width+7);
 
     programID = LoadShaders("Sample_GL.vert", "Sample_GL.frag");
     Matrices.MatrixID = glGetUniformLocation(programID, "MVP");
