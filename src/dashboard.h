@@ -18,6 +18,7 @@ public:
     void tick();
 private:
     VAO *fuel_bar;
+    VAO *altitude_bar;
 };
 
 #endif
