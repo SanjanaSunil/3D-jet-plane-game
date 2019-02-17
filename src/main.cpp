@@ -63,6 +63,7 @@ void tick_input(GLFWwindow *window) {
 
     int one = glfwGetKey(window, GLFW_KEY_1);
     int two = glfwGetKey(window, GLFW_KEY_2);
+    int three = glfwGetKey(window, GLFW_KEY_3);
 
     int up = glfwGetKey(window, GLFW_KEY_W);
     int down = glfwGetKey(window, GLFW_KEY_S);
@@ -76,8 +77,8 @@ void tick_input(GLFWwindow *window) {
     if (down) player.position.y -= player.speedy;
     if (tilt_left) player.rotation.z = -1;
     if (tilt_right) player.rotation.z = 1;
-    if (rotate_left) player.rotation.y = -1;
-    if (rotate_right) player.rotation.y = 1;
+    if (rotate_left) player.rotation.y = 1;
+    if (rotate_right) player.rotation.y = -1;
     if (forward) 
     {
         player.position = player.find_relative_pos(player.speed);
@@ -88,6 +89,8 @@ void tick_input(GLFWwindow *window) {
     if (one) perspective = 1;
     // Tower view
     if (two) perspective = 2;
+    // Follow cam view
+    if (three) perspective = 3;
 }
 
 void tick_elements() {
@@ -105,6 +108,12 @@ void tick_elements() {
         cam_eye = glm::vec3(20, 7, 20);
         cam_target = player.position;
         cam_up = glm::vec3(0, 1, 0);
+    }
+
+    if(perspective==3) {
+        cam_eye = player.find_relative_pos(glm::vec3(0, 3.5f, -6-player.width));
+        cam_target = player.position;
+        cam_up = player.find_relative_pos(glm::vec3(0, 1, 0)) - player.position;
     }
 
     // Check altitude
