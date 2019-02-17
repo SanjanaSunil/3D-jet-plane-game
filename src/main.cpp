@@ -108,7 +108,7 @@ void tick_elements() {
     }
 
     // Check for death
-    if(dashboard.fuel_scale.x<=0.0f) quit(window);
+    if(dashboard.fuel_scale.x<=0.0f) quit(window); //Fuel check
 }
 
 
