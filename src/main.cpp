@@ -114,6 +114,8 @@ void tick_elements() {
 
 void initGL(GLFWwindow *window, int width, int height) {
 
+    glfwSetWindowTitle(window, "Link - Tales of the Jetplane");
+
     perspective = 1;
 
     sea       = Sea(0, 0, 0, COLOR_BLUE);
