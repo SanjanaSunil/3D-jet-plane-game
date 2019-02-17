@@ -30,7 +30,7 @@ void Dashboard::draw(glm::mat4 VP) {
 }
 
 void Dashboard::reduce_fuel() {
-	fuel_scale.x -= 0.0003f;
+	if(fuel_scale.x>0.0f) fuel_scale.x -= 0.0003f;
 }
 
 void Dashboard::set_position(float x, float y, float z) {

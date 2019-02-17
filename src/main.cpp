@@ -107,6 +107,8 @@ void tick_elements() {
         cam_up = glm::vec3(0, 1, 0);
     }
 
+    // Check for death
+    if(dashboard.fuel_scale.x<=0.0f) quit(window);
 }
 
 

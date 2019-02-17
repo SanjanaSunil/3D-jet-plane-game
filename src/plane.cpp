@@ -4,7 +4,7 @@
 Plane::Plane(float x, float y, float z, color_t color) {
     this->position = glm::vec3(x, y, z);
     this->rotation = glm::vec3(0, 0, 0);
-    this->speed = glm::vec3(0, 0, 0.01);
+    this->speed = glm::vec3(0, 0, 0.02f);
     this->axis_rotated = glm::mat4(1.0f);
 
     this->height = 1;
