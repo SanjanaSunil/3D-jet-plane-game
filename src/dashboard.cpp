@@ -1,7 +1,7 @@
 #include "dashboard.h"
 #include "main.h"
 
-Dashboard::Dashboard(float x, float y, float z, float plane_height) {
+Dashboard::Dashboard(float x, float y, float z, float plane_height, float plane_max_height) {
     this->position = glm::vec3(x, y, z);
     this->radius = radius;
     this->rotation = 0;
@@ -78,7 +78,7 @@ Dashboard::Dashboard(float x, float y, float z, float plane_height) {
 	   -3.9f,-0.04f, 0.0f,
 	};
     this->altitude_level = create3DObject(GL_TRIANGLES, 6, altitude_level_vertex_buffer_data, COLOR_RED, GL_FILL);
-	this->altitude_level_translate = glm::vec3(0, (plane_height*altitude_bar_height/200)-altitude_bar_height/2, 0);
+	this->altitude_level_translate = glm::vec3(0, (plane_height*altitude_bar_height/plane_max_height)-altitude_bar_height/2, 0);
 }
 
 void Dashboard::draw(glm::mat4 VP) {
@@ -113,8 +113,8 @@ void Dashboard::reduce_fuel() {
 	if(fuel_scale.x>0.0f) fuel_scale.x -= 0.0003f;
 }
 
-void Dashboard::set_altitude_level(float plane_height) {
-	this->altitude_level_translate = glm::vec3(0, (plane_height*altitude_bar_height/200)-altitude_bar_height/2, 0);
+void Dashboard::set_altitude_level(float plane_height, float plane_max_height) {
+	this->altitude_level_translate = glm::vec3(0, (plane_height*altitude_bar_height/plane_max_height)-altitude_bar_height/2, 0);
 }
 
 void Dashboard::set_position(float x, float y, float z) {

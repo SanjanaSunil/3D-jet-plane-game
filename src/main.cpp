@@ -108,10 +108,11 @@ void tick_elements() {
     }
 
     // Check altitude
-    dashboard.set_altitude_level(player.position.y);
+    dashboard.set_altitude_level(player.position.y, player.max_height);
 
     // Check for death
     if(dashboard.fuel_scale.x<=0.0f) quit(window); //Fuel check
+    if(player.position.y>player.max_height || player.position.y<0) quit(window);
 }
 
 
@@ -121,14 +122,14 @@ void initGL(GLFWwindow *window, int width, int height) {
 
     perspective = 1;
 
-    sea       = Sea(0, 0, 0, COLOR_BLUE);
+    sea = Sea(0, 0, 0, COLOR_BLUE);
 
-    player    = Plane(0, 5, 0, COLOR_RED);
+    player = Plane(0, 5, 0, COLOR_RED);
     cam_eye = glm::vec3(0, 0, player.width);
     cam_target = glm::vec3(0, 0, player.position.z+10);
     cam_up = glm::vec3(0, 1, 0);
 
-    dashboard = Dashboard(0, 0, 0, player.position.y);
+    dashboard = Dashboard(0, 0, 0, player.position.y, player.max_height);
     target_point = Target(0, 0, player.height+player.width, 0.2, COLOR_BLACK);
 
     programID = LoadShaders("Sample_GL.vert", "Sample_GL.frag");
