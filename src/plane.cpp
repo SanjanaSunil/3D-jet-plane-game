@@ -97,6 +97,8 @@ Plane::Plane(float x, float y, float z, float height, float width, color_t color
     vertex_buffer_data[4*9*n+8] = width - height/2;
 
     this->object = create3DObject(GL_TRIANGLES, 12*n+3, vertex_buffer_data, color, GL_FILL);
+
+    // this->object = drawBlenderObject("plane.obj", "plane.mtl");
 }
 
 void Plane::draw(glm::mat4 VP) {

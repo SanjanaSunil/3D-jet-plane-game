@@ -55,7 +55,7 @@ void reshapeWindow(GLFWwindow *window, int width, int height) {
     reset_screen();
 }
 
-VertexData getVertexData(string objfile, string mtlfile) {
+struct VAO *drawBlenderObject(string objfile, string mtlfile) {
 
     objfile = "../res/objs/" + objfile;
     mtlfile = "../res/mtls/" + mtlfile;
@@ -152,5 +152,6 @@ VertexData getVertexData(string objfile, string mtlfile) {
         color_buffer_data[i] = colors[i];
     }
 
-    return {vertex_buffer_data, color_buffer_data, total_len};
+    struct VAO* object = create3DObject(GL_TRIANGLES, total_len/3, vertex_buffer_data, color_buffer_data, GL_FILL);
+    return object;
 }
