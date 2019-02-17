@@ -86,7 +86,7 @@ void tick_elements() {
     target_point.position = player.find_relative_pos(glm::vec3(0, 0, player.height+player.width));
 
     if(perspective==1) {
-        cam_eye = player.find_relative_pos(glm::vec3(0, 0, player.height/2+player.width));
+        cam_eye = player.find_relative_pos(glm::vec3(0, 0, player.width));
         cam_target = target_point.position;
         cam_up = player.find_relative_pos(glm::vec3(0, 1, 0)) - player.position;
     }
@@ -106,8 +106,8 @@ void initGL(GLFWwindow *window, int width, int height) {
 
     sea       = Sea(0, 0, 0, COLOR_BLUE);
 
-    player    = Plane(0, 5, 0, 7, 1, COLOR_RED);
-    cam_eye = glm::vec3(0, 0, player.height/2+player.width);
+    player    = Plane(0, 5, 0, COLOR_RED);
+    cam_eye = glm::vec3(0, 0, player.width);
     cam_target = glm::vec3(0, 0, player.position.z+10);
     cam_up = glm::vec3(0, 1, 0);
 
