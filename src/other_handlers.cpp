@@ -55,7 +55,7 @@ void reshapeWindow(GLFWwindow *window, int width, int height) {
     reset_screen();
 }
 
-struct VAO *drawBlenderObject(string objfile, string mtlfile) {
+struct VAO *getBlenderObject(string objfile, string mtlfile) {
 
     objfile = "../res/objs/" + objfile;
     mtlfile = "../res/mtls/" + mtlfile;

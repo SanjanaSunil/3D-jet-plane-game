@@ -43,7 +43,7 @@ void scroll_callback(GLFWwindow *window, double xoffset, double yoffset);
 void error_callback(int error, const char *description);
 void quit(GLFWwindow *window);
 void reshapeWindow(GLFWwindow *window, int width, int height);
-struct VAO *drawBlenderObject(std::string mtlfile, std::string objfile);
+struct VAO *getBlenderObject(std::string mtlfile, std::string objfile);
 
 // Types
 struct VAO {

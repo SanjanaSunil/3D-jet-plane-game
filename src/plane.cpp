@@ -11,7 +11,7 @@ Plane::Plane(float x, float y, float z, color_t color) {
     this->width = 8;
     speedy = 0.01;
 
-    this->object = drawBlenderObject("plane.obj", "plane.mtl");
+    this->object = getBlenderObject("plane.obj", "plane.mtl");
 }
 
 void Plane::draw(glm::mat4 VP) {

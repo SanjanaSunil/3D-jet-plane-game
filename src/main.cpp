@@ -2,11 +2,13 @@
 #include "timer.h"
 #include "sea.h"
 #include "plane.h"
+#include "dashboard.h"
 #include "target.h"
 
 using namespace std;
 
 GLMatrices Matrices;
+GLMatrices FixedMatrices;
 GLuint     programID;
 GLFWwindow *window;
 
@@ -16,6 +18,7 @@ GLFWwindow *window;
 
 Sea sea;
 Plane player;
+Dashboard dashboard;
 Target target_point;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
@@ -36,10 +39,12 @@ void draw() {
     // use the loaded shader program
     glUseProgram (programID);
 
+    FixedMatrices.view = glm::lookAt(glm::vec3(0,0,10), glm::vec3(0,0,0), glm::vec3(0,1,0));
     Matrices.view = glm::lookAt( cam_eye, cam_target, cam_up );
     // Matrices.view = glm::lookAt(glm::vec3(0, 0, 3), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0)); // Fixed camera for 2D (ortho) in XY plane
 
     // Compute ViewProject matrix as view/camera might not be changed for this frame (basic scenario)
+    glm::mat4 FVP = FixedMatrices.projection * FixedMatrices.view;
     glm::mat4 VP = Matrices.projection * Matrices.view;
 
     // Send our transformation to the currently bound shader, in the "MVP" uniform
@@ -50,7 +55,8 @@ void draw() {
     sea.draw(VP);
     player.draw(VP);
 
-    if(perspective==1) target_point.draw(VP, player.axis_rotated);
+    // if(perspective==1) target_point.draw(VP, player.axis_rotated);
+    dashboard.draw(FVP);
 }
 
 void tick_input(GLFWwindow *window) {
@@ -72,7 +78,11 @@ void tick_input(GLFWwindow *window) {
     if (tilt_right) player.rotation.z = 1;
     if (rotate_left) player.rotation.y = -1;
     if (rotate_right) player.rotation.y = 1;
-    if (forward) player.position = player.find_relative_pos(player.speed);
+    if (forward) 
+    {
+        player.position = player.find_relative_pos(player.speed);
+        dashboard.reduce_fuel();
+    }
 
     // Front view
     if (one) perspective = 1;
@@ -111,6 +121,7 @@ void initGL(GLFWwindow *window, int width, int height) {
     cam_target = glm::vec3(0, 0, player.position.z+10);
     cam_up = glm::vec3(0, 1, 0);
 
+    dashboard = Dashboard(0, 0, 0);
     target_point = Target(0, 0, player.height+player.width, 0.2, COLOR_BLACK);
 
     programID = LoadShaders("Sample_GL.vert", "Sample_GL.frag");
@@ -118,6 +129,11 @@ void initGL(GLFWwindow *window, int width, int height) {
 
 
     reshapeWindow (window, width, height);
+    float top    = screen_center_y + 4 / screen_zoom;
+    float bottom = screen_center_y - 4 / screen_zoom;
+    float left   = screen_center_x - 4 / screen_zoom;
+    float right  = screen_center_x + 4 / screen_zoom;
+    FixedMatrices.projection = glm::ortho(left, right, bottom, top, 0.1f, 500.0f);
 
     glClearColor (COLOR_BACKGROUND.r / 256.0, COLOR_BACKGROUND.g / 256.0, COLOR_BACKGROUND.b / 256.0, 0.0f); // R, G, B, A
     glClearDepth (1.0f);
