@@ -133,7 +133,7 @@ void tick_elements() {
     {
         parachute_enemy.counter = 0;
         parachute_enemy.present = true;
-        parachute_enemy.position = player.find_relative_pos(glm::vec3(0, 0, player.height+player.width+7));
+        parachute_enemy.position = player.find_relative_pos(glm::vec3(0, 5, player.height+player.width+7));
     }
     if(parachute_enemy.present) parachute_enemy.fall();
 }
@@ -155,7 +155,7 @@ void initGL(GLFWwindow *window, int width, int height) {
     dashboard = Dashboard(0, 0, 0, player.position.y, player.max_height);
     target_point = Target(0, 0, player.height+player.width, 0.2, COLOR_BLACK);
 
-    parachute_enemy = Parachute(0, 0, player.height+player.width+7);
+    parachute_enemy = Parachute(0, 5, player.height+player.width+7);
 
     programID = LoadShaders("Sample_GL.vert", "Sample_GL.frag");
     Matrices.MatrixID = glGetUniformLocation(programID, "MVP");
