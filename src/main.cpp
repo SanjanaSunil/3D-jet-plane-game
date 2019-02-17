@@ -107,6 +107,9 @@ void tick_elements() {
         cam_up = glm::vec3(0, 1, 0);
     }
 
+    // Check altitude
+    dashboard.set_altitude_level(player.position.y);
+
     // Check for death
     if(dashboard.fuel_scale.x<=0.0f) quit(window); //Fuel check
 }
@@ -125,7 +128,7 @@ void initGL(GLFWwindow *window, int width, int height) {
     cam_target = glm::vec3(0, 0, player.position.z+10);
     cam_up = glm::vec3(0, 1, 0);
 
-    dashboard = Dashboard(0, 0, 0);
+    dashboard = Dashboard(0, 0, 0, player.position.y);
     target_point = Target(0, 0, player.height+player.width, 0.2, COLOR_BLACK);
 
     programID = LoadShaders("Sample_GL.vert", "Sample_GL.frag");

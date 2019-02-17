@@ -1,11 +1,12 @@
 #include "dashboard.h"
 #include "main.h"
 
-Dashboard::Dashboard(float x, float y, float z) {
+Dashboard::Dashboard(float x, float y, float z, float plane_height) {
     this->position = glm::vec3(x, y, z);
     this->radius = radius;
     this->rotation = 0;
 	
+	// Fuel bar
 	this->fuel_scale = glm::vec3(1.0f, 1.0f, 1.0f);
     GLfloat fuel_vertex_buffer_data[] = {
 	    3.8f,-3.5f, 0.0f,
@@ -17,7 +18,8 @@ Dashboard::Dashboard(float x, float y, float z) {
 	};
     this->fuel_bar = create3DObject(GL_TRIANGLES, 6, fuel_vertex_buffer_data, COLOR_GREEN, GL_FILL);
 
-	float height = 6.2f;
+	// Altitude bar
+	this->altitude_bar_height = 6.2f;
 	int bar_no = 10;
 	GLfloat altitude_vertex_buffer_data[18+(bar_no+1)*18];
 	for(int i=0; i<18; ++i) // Backbone
@@ -41,30 +43,42 @@ Dashboard::Dashboard(float x, float y, float z) {
 	for(int count=0; count<=bar_no; ++count) 
 	{
 		altitude_vertex_buffer_data[i++] = -3.8f;
-		altitude_vertex_buffer_data[i++] = start_y + count*(float)height/bar_no;
+		altitude_vertex_buffer_data[i++] = start_y + count*(float)altitude_bar_height/bar_no;
 		altitude_vertex_buffer_data[i++] = 0.0f;
 
 		altitude_vertex_buffer_data[i++] = -3.55f;
-		altitude_vertex_buffer_data[i++] = start_y + count*(float)height/bar_no;
+		altitude_vertex_buffer_data[i++] = start_y + count*(float)altitude_bar_height/bar_no;
 		altitude_vertex_buffer_data[i++] = 0.0f;
 
 		altitude_vertex_buffer_data[i++] = -3.55f;
-		altitude_vertex_buffer_data[i++] = start_y + count*(float)height/bar_no - 0.02f;
+		altitude_vertex_buffer_data[i++] = start_y + count*(float)altitude_bar_height/bar_no - 0.02f;
 		altitude_vertex_buffer_data[i++] = 0.0f;
 
 		altitude_vertex_buffer_data[i++] = -3.8f;
-		altitude_vertex_buffer_data[i++] = start_y + count*(float)height/bar_no;
+		altitude_vertex_buffer_data[i++] = start_y + count*(float)altitude_bar_height/bar_no;
 		altitude_vertex_buffer_data[i++] = 0.0f;
 
 		altitude_vertex_buffer_data[i++] = -3.8f;
-		altitude_vertex_buffer_data[i++] = start_y + count*(float)height/bar_no - 0.02f;
+		altitude_vertex_buffer_data[i++] = start_y + count*(float)altitude_bar_height/bar_no - 0.02f;
 		altitude_vertex_buffer_data[i++] = 0.0f;
 
 		altitude_vertex_buffer_data[i++] = -3.55f;
-		altitude_vertex_buffer_data[i++] = start_y + count*(float)height/bar_no - 0.02f;
+		altitude_vertex_buffer_data[i++] = start_y + count*(float)altitude_bar_height/bar_no - 0.02f;
 		altitude_vertex_buffer_data[i++] = 0.0f;
 	}
 	this->altitude_bar = create3DObject(GL_TRIANGLES, 6+(bar_no+1)*6, altitude_vertex_buffer_data, COLOR_BLACK, GL_FILL);
+
+	// Altitude level
+    GLfloat altitude_level_vertex_buffer_data[] = {
+	   -3.9f, 0.04f, 0.0f,
+       -3.3f, 0.04f, 0.0f,
+       -3.3f,-0.04f, 0.0f,
+	   -3.9f, 0.04f, 0.0f,
+	   -3.3f,-0.04f, 0.0f,
+	   -3.9f,-0.04f, 0.0f,
+	};
+    this->altitude_level = create3DObject(GL_TRIANGLES, 6, altitude_level_vertex_buffer_data, COLOR_RED, GL_FILL);
+	this->altitude_level_translate = glm::vec3(0, (plane_height*altitude_bar_height/200)-altitude_bar_height/2, 0);
 }
 
 void Dashboard::draw(glm::mat4 VP) {
@@ -85,10 +99,22 @@ void Dashboard::draw(glm::mat4 VP) {
     MVP = VP * Matrices.model;
     glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
     draw3DObject(this->altitude_bar);
+
+	// Altitude level
+	Matrices.model = glm::mat4(1.0f);
+    translate = glm::translate (this->altitude_level_translate);
+    Matrices.model *= (translate);
+    MVP = VP * Matrices.model;
+    glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
+    draw3DObject(this->altitude_level);
 }
 
 void Dashboard::reduce_fuel() {
 	if(fuel_scale.x>0.0f) fuel_scale.x -= 0.0003f;
+}
+
+void Dashboard::set_altitude_level(float plane_height) {
+	this->altitude_level_translate = glm::vec3(0, (plane_height*altitude_bar_height/200)-altitude_bar_height/2, 0);
 }
 
 void Dashboard::set_position(float x, float y, float z) {

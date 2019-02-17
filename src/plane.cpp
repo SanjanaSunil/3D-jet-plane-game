@@ -9,7 +9,7 @@ Plane::Plane(float x, float y, float z, color_t color) {
 
     this->height = 1;
     this->width = 8;
-    speedy = 0.01;
+    speedy = 0.04;
 
     this->object = getBlenderObject("plane.obj", "plane.mtl");
 }
