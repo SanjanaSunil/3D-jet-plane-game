@@ -1,10 +1,9 @@
 # Todo
 
-- terrain
+- make missiles projectile so that it can kill the enemy cannons
 - fuel up
 - smoke rings
-- checkpoints and arrows
-- enemy cannons
+- enemy cannons (shooting)
 - volcanos
 - health
 - helicopter view
