@@ -3,6 +3,7 @@
 #include "sea.h"
 #include "plane.h"
 #include "dashboard.h"
+#include "missile.h"
 #include "parachute.h"
 #include "target.h"
 
@@ -20,6 +21,7 @@ GLFWwindow *window;
 Sea sea;
 Plane player;
 Dashboard dashboard;
+Missile missile;
 Parachute parachute_enemy;
 Target target_point;
 
@@ -56,6 +58,7 @@ void draw() {
     // Scene render
     sea.draw(VP);
     player.draw(VP);
+    if(missile.present) missile.draw(VP);
 
     if(parachute_enemy.present) parachute_enemy.draw(VP);
 
@@ -78,6 +81,9 @@ void tick_input(GLFWwindow *window) {
     int rotate_left  = glfwGetKey(window, GLFW_KEY_Q);
     int rotate_right = glfwGetKey(window, GLFW_KEY_E);
 
+    int left_click = glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT);
+    int right_click = glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT);
+
     if (up) player.position.y += player.speedy;
     if (down) player.position.y -= player.speedy;
     if (tilt_left) player.rotation.z = -1;
@@ -98,6 +104,14 @@ void tick_input(GLFWwindow *window) {
     if (three) perspective = 3;
     // Top view
     if (four) perspective = 4;
+
+    // Missile
+    if(left_click && !missile.present) 
+    {
+        missile.present = true;
+        missile.axis_rotated = player.axis_rotated;
+        missile.initial_pos = player.position;
+    }
 }
 
 void tick_elements() {
@@ -142,6 +156,9 @@ void tick_elements() {
     // Check altitude
     dashboard.set_altitude_level(player.position.y, player.max_height);
 
+    // Missile
+    if(missile.present) missile.tick();
+
     // Check for death
     if(dashboard.fuel_scale.x<=0.0f) quit(window); //Fuel check
     if(player.position.y>player.max_height || player.position.y<0) quit(window);
@@ -163,6 +180,8 @@ void initGL(GLFWwindow *window, int width, int height) {
 
     dashboard = Dashboard(0, 0, 0, player.position.y, player.max_height);
     target_point = Target(0, 0, player.height+player.width, 0.2, COLOR_BLACK);
+
+    missile = Missile(0, 0, 0, 1, 0.5, COLOR_RED);
 
     parachute_enemy = Parachute(0, 5, player.height+player.width+7);
 

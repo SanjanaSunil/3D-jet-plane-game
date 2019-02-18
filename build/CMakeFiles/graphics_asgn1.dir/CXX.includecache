@@ -63,6 +63,8 @@ plane.h
 /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/plane.h
 dashboard.h
 /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/dashboard.h
+missile.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/missile.h
 parachute.h
 /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/parachute.h
 target.h
@@ -93,6 +95,16 @@ glm/gtx/transform.hpp
 -
 glm/gtc/matrix_transform.hpp
 -
+
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/missile.cpp
+missile.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/missile.h
+main.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.h
+
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/missile.h
+main.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.h
 
 /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/nonedit.cpp
 iostream
