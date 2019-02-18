@@ -32,7 +32,7 @@ void Parachute::set_position(float x, float y, float z) {
 }
 
 bounding_box_t Parachute::get_dimensions() {
-    return {position.x, position.y, position.z, 1.5f, 1.5f, 1.5f};
+    return {position.x, position.y, position.z, 1.2f, 1.2f, 1.2f};
 }
 
 void Parachute::tick() {

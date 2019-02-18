@@ -43,7 +43,7 @@ void Plane::set_position(float x, float y) {
 }
 
 bounding_box_t Plane::get_dimensions() {
-    return {position.x, position.y, position.z, 4.0f, 4.0f, 9.0f};
+    return {position.x, position.y, position.z, 3.0f, 3.0f, 8.0f};
 }
 
 void Plane::tick() {

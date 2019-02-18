@@ -145,19 +145,18 @@ void tick_elements() {
     // Check for death
     if(dashboard.fuel_scale.x<=0.0f) quit(window); //Fuel check
     if(player.position.y>player.max_height || player.position.y<0) quit(window);
-    if(detect_collision(player.get_dimensions(), parachute_enemy.get_dimensions())) quit(window);
 }
 
 
 void initGL(GLFWwindow *window, int width, int height) {
 
-    glfwSetWindowTitle(window, "Link - Tales of the Jetplane");
+    glfwSetWindowTitle(window, "Link - The Fighter Jetplane");
 
     perspective = 1;
 
     sea = Sea(0, 0, 0, COLOR_BLUE);
 
-    player = Plane(0, 5, 0, COLOR_RED);
+    player = Plane(0, 0.1f, 0, COLOR_RED);
     cam_eye = glm::vec3(0, 0, player.width);
     cam_target = glm::vec3(0, 0, player.position.z+10);
     cam_up = glm::vec3(0, 1, 0);
@@ -172,11 +171,6 @@ void initGL(GLFWwindow *window, int width, int height) {
 
 
     reshapeWindow (window, width, height);
-    float top    = screen_center_y + 4 / screen_zoom;
-    float bottom = screen_center_y - 4 / screen_zoom;
-    float left   = screen_center_x - 4 / screen_zoom;
-    float right  = screen_center_x + 4 / screen_zoom;
-    FixedMatrices.projection = glm::ortho(left, right, bottom, top, 0.1f, 500.0f);
 
     glClearColor (COLOR_BACKGROUND.r / 256.0, COLOR_BACKGROUND.g / 256.0, COLOR_BACKGROUND.b / 256.0, 0.0f); // R, G, B, A
     glClearDepth (1.0f);
@@ -231,5 +225,6 @@ void reset_screen() {
     float bottom = screen_center_y - 4 / screen_zoom;
     float left   = screen_center_x - 4 / screen_zoom;
     float right  = screen_center_x + 4 / screen_zoom;
+    FixedMatrices.projection = glm::ortho(left, right, bottom, top, 0.1f, 500.0f);
     Matrices.projection = glm::perspective(glm::radians(60.0f), 1.0f, 0.1f, 500.0f);
 }
