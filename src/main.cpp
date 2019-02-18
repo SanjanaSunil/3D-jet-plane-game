@@ -92,7 +92,7 @@ void tick_input(GLFWwindow *window) {
     if (rotate_right) player.rotation.y = -1;
     if (forward) 
     {
-        player.position = player.find_relative_pos(player.speed);
+        player.accelerate();
         dashboard.reduce_fuel();
     }
 
@@ -116,6 +116,8 @@ void tick_input(GLFWwindow *window) {
 
 void tick_elements() {
     camera_rotation_angle += 1;
+
+    player.tick();
 
     target_point.position = player.find_relative_pos(glm::vec3(0, 0, player.height+player.width));
 

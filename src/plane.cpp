@@ -4,7 +4,7 @@
 Plane::Plane(float x, float y, float z, color_t color) {
     this->position = glm::vec3(x, y, z);
     this->rotation = glm::vec3(0, 0, 0);
-    this->speed = glm::vec3(0, 0, 0.02f);
+    this->speed = glm::vec3(0, 0, 0);
     this->axis_rotated = glm::mat4(1.0f);
 
     this->max_height = 100.0f;
@@ -47,8 +47,12 @@ bounding_box_t Plane::get_dimensions() {
 }
 
 void Plane::tick() {
-    // this->rotation += speed;
-    // this->position.x -= speed;
-    // this->position.y -= speed;
+    this->position = this->find_relative_pos(this->speed);
+    if(this->speed.z>0) this->speed.z -= 0.005f;
+    if(this->speed.z<0) this->speed.z = 0;
+}
+
+void Plane::accelerate() {
+    this->speed.z += 0.01f;
 }
 
