@@ -7,6 +7,7 @@
 #include "bomb.h"
 #include "parachute.h"
 #include "target.h"
+#include "island.h"
 
 using namespace std;
 
@@ -18,6 +19,8 @@ GLFWwindow *window;
 /**************************
 * Customizable functions *
 **************************/
+
+Island trial;
 
 Sea sea;
 Plane player;
@@ -67,6 +70,8 @@ void draw() {
 
     // if(perspective==1) target_point.draw(VP, player.axis_rotated);
     dashboard.draw(FVP);
+
+    trial.draw(VP);
 }
 
 void tick_input(GLFWwindow *window) {
@@ -186,6 +191,8 @@ void initGL(GLFWwindow *window, int width, int height) {
     glfwSetWindowTitle(window, "Link - The Fighter Jetplane");
 
     perspective = 1;
+
+    trial = Island(0, 2, 100);
 
     sea = Sea(0, 0, 0, COLOR_BLUE);
 
