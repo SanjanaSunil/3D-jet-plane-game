@@ -140,7 +140,7 @@ void tick_elements() {
     }
 
     if(perspective==4) {
-        cam_eye = glm::vec3(0, player.position.y+30, 0);
+        cam_eye = glm::vec3(player.position.x, player.position.y+30, player.position.z);
         cam_target = player.position;
         cam_up = glm::vec3(0, 0, 1);
     }
