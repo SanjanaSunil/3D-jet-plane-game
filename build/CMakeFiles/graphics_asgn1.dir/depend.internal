@@ -36,6 +36,7 @@ CMakeFiles/graphics_asgn1.dir/src/main.cpp.o
  /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/sea.h
  /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/target.h
  /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/timer.h
+ /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/volcano.h
 CMakeFiles/graphics_asgn1.dir/src/missile.cpp.o
  /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.h
  /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/missile.cpp
@@ -65,3 +66,7 @@ CMakeFiles/graphics_asgn1.dir/src/target.cpp.o
 CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o
  /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/timer.cpp
  /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/timer.h
+CMakeFiles/graphics_asgn1.dir/src/volcano.cpp.o
+ /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.h
+ /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/volcano.cpp
+ /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/volcano.h

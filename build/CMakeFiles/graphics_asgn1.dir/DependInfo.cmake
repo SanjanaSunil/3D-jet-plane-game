@@ -19,6 +19,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/sea.cpp" "/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/graphics_asgn1.dir/src/sea.cpp.o"
   "/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/target.cpp" "/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/graphics_asgn1.dir/src/target.cpp.o"
   "/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/timer.cpp" "/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o"
+  "/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/volcano.cpp" "/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/graphics_asgn1.dir/src/volcano.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

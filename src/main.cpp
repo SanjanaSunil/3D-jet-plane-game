@@ -9,6 +9,7 @@
 #include "target.h"
 #include "island.h"
 #include "checkpoint.h"
+#include "volcano.h"
 
 using namespace std;
 
@@ -30,6 +31,7 @@ Island island;
 Checkpoint checkpoint;
 Parachute parachute_enemies[5];
 Target target_point;
+Volcano volcanos[3];
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
@@ -76,8 +78,12 @@ void draw() {
     // Drawing checkpoint
     checkpoint.draw(VP);
 
+    // Drawing volcanos
+    for(int i=0; i<3; ++i) volcanos[i].draw(VP);
+
     // if(perspective==1) target_point.draw(VP, player.axis_rotated);
     dashboard.draw(FVP);
+
 }
 
 void tick_input(GLFWwindow *window) {
@@ -193,13 +199,35 @@ void tick_elements() {
     // Check for death
     if(dashboard.fuel_scale.x<=0.0f) quit(window); //Fuel check
     if(player.position.y>player.max_height || player.position.y<0) quit(window);
+    for(int i=0; i<3; ++i)
+    {
+        bool check_x = player.position.x<volcanos[i].position.x+10 && player.position.x>volcanos[i].position.x-10;
+        bool check_z = player.position.z<volcanos[i].position.z+10 && player.position.z>volcanos[i].position.z-10;
+
+        if(check_x && check_z) quit(window);
+    }
 
     // Check collision of bomb and checkpoint
     if(detect_collision(bomb.get_dimensions(), checkpoint.get_dimensions()) || detect_collision(missile.get_dimensions(), checkpoint.get_dimensions()))
     {
         checkpoint.position.x = rand()%200 - 100;
         checkpoint.position.z = rand()%200 - 100;
-        if(checkpoint.position.x>64 && checkpoint.position.x<84 && checkpoint.position.z>75 && checkpoint.position.z<95) checkpoint.position.x *= -1;
+
+        bool check_x = checkpoint.position.x>(island.position.x-10) && checkpoint.position.x<(island.position.x+10);
+        bool check_z = checkpoint.position.z>(island.position.z-10) && checkpoint.position.z<(island.position.z+10);
+        if(check_x && check_z) checkpoint.position.x *= -1;
+        
+        for(int i=0; i<3; ++i)
+        {
+            check_x = checkpoint.position.x<volcanos[i].position.x+10 && checkpoint.position.x>volcanos[i].position.x-10;
+            check_z = checkpoint.position.z<volcanos[i].position.z+10 && checkpoint.position.z>volcanos[i].position.z-10;
+
+            if(check_x && check_z)
+            {
+                checkpoint.position.x *= -1;
+                break;
+            }
+        }
     }
 
 }
@@ -229,7 +257,17 @@ void initGL(GLFWwindow *window, int width, int height) {
     island = Island(74, 3.0f, 85);
 
     checkpoint = Checkpoint(player.position.x+(rand()%100)+50, 0, player.position.z+(rand()%100)+50);
-    if(checkpoint.position.x>64 && checkpoint.position.x<84 && checkpoint.position.z>75 && checkpoint.position.z<95) checkpoint.position.x *= -1;
+    bool check_x = checkpoint.position.x>(island.position.x-10) && checkpoint.position.x<(island.position.x+10);
+    bool check_z = checkpoint.position.z>(island.position.z-10) && checkpoint.position.z<(island.position.z+10);
+    if(check_x && check_z) checkpoint.position.x *= -1;
+
+    int pos_x = -100;
+    int pos_z = 0;
+    for(int i=0; i<3; ++i)
+    {
+        volcanos[i] = Volcano(pos_x, -2, pos_z);
+        pos_z -= 20;
+    }
 
     programID = LoadShaders("Sample_GL.vert", "Sample_GL.frag");
     Matrices.MatrixID = glGetUniformLocation(programID, "MVP");
