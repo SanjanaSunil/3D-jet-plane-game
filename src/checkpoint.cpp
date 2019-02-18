@@ -33,10 +33,11 @@ void Checkpoint::set_position(float x, float y, float z) {
 }
 
 void Checkpoint::tick(float plane_height) {
+    this->arrow_position = this->position;
     this->arrow_position.y = plane_height;
     if(this->arrow_position.y<7) this->arrow_position.y = 7;
 }
 
 bounding_box_t Checkpoint::get_dimensions() {
-    return {position.x, position.y+1, position.z, 2.0f, 2.0f, 2.0f};
+    return {position.x, position.y+1, position.z, 7.0f, 2.0f, 7.0f};
 }

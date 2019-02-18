@@ -73,6 +73,9 @@ void draw() {
     // Drawing island
     island.draw(VP);
 
+    // Drawing checkpoint
+    checkpoint.draw(VP);
+
     // if(perspective==1) target_point.draw(VP, player.axis_rotated);
     dashboard.draw(FVP);
 }
@@ -184,9 +187,20 @@ void tick_elements() {
     // Bomb
     if(bomb.present) bomb.tick();
 
+    // Adjust arrow of checkpoint
+    checkpoint.tick(player.position.y);
+
     // Check for death
     if(dashboard.fuel_scale.x<=0.0f) quit(window); //Fuel check
     if(player.position.y>player.max_height || player.position.y<0) quit(window);
+
+    // Check collision of bomb and checkpoint
+    if(detect_collision(bomb.get_dimensions(), checkpoint.get_dimensions()))
+    {
+        checkpoint.position.x = rand()%200 - 100;
+        checkpoint.position.z = rand()%200 - 100;
+        if(checkpoint.position.x>64 && checkpoint.position.x<84 && checkpoint.position.z>75 && checkpoint.position.z<95) checkpoint.position.x *= -1;
+    }
 
 }
 
@@ -212,11 +226,10 @@ void initGL(GLFWwindow *window, int width, int height) {
 
     for(int i=0; i<5; ++i) parachute_enemies[i] = Parachute(player.position.x+(rand()%100-50), rand()%20, player.position.z+(rand()%100-50));
 
-    float xpos = player.position.x + rand()%50 + 50;
-    float zpos = player.position.z + rand()%50 + 50;
-    island = Island(xpos, 3.0f, zpos);
+    island = Island(74, 3.0f, 85);
 
-    // checkpoint = Checkpoint();
+    checkpoint = Checkpoint(player.position.x+(rand()%100)+50, 0, player.position.z+(rand()%100)+50);
+    if(checkpoint.position.x>64 && checkpoint.position.x<84 && checkpoint.position.z>75 && checkpoint.position.z<95) checkpoint.position.x *= -1;
 
     programID = LoadShaders("Sample_GL.vert", "Sample_GL.frag");
     Matrices.MatrixID = glGetUniformLocation(programID, "MVP");
