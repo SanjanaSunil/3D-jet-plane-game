@@ -25,6 +25,7 @@ Plane player;
 Dashboard dashboard;
 Missile missile;
 Bomb bomb;
+Island island;
 Parachute parachute_enemies[5];
 Target target_point;
 
@@ -66,6 +67,9 @@ void draw() {
 
     // Parachute enemy
     for(int i=0; i<5; ++i) if(parachute_enemies[i].present) parachute_enemies[i].draw(VP);
+
+    // Drawing island
+    island.draw(VP);
 
     // if(perspective==1) target_point.draw(VP, player.axis_rotated);
     dashboard.draw(FVP);
@@ -204,6 +208,14 @@ void initGL(GLFWwindow *window, int width, int height) {
     bomb = Bomb(0, 0, 0);
 
     for(int i=0; i<5; ++i) parachute_enemies[i] = Parachute(player.position.x+(rand()%100-50), rand()%20, player.position.z+(rand()%100-50));
+
+    int xdir = rand()%2;
+    float xpos = player.position.x + rand()%50 + 50;
+    if(xdir==1) xpos *= -1;
+    int zdir = rand()%2;
+    float zpos = player.position.z + rand()%50 + 50;
+    if(zdir==1) zpos *= -1;
+    island = Island(xpos, 3.0f, zpos);
 
     programID = LoadShaders("Sample_GL.vert", "Sample_GL.frag");
     Matrices.MatrixID = glGetUniformLocation(programID, "MVP");

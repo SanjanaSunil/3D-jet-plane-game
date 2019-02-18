@@ -13,6 +13,7 @@ public:
     void set_position(float x, float y, float z);
 private:
     VAO *object;
+    VAO *arrow;
 };
 
 #endif

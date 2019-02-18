@@ -7,7 +7,7 @@ Plane::Plane(float x, float y, float z, color_t color) {
     this->speed = glm::vec3(0, 0, 0);
     this->axis_rotated = glm::mat4(1.0f);
 
-    this->max_height = 100.0f;
+    this->max_height = 50.0f;
     this->height = 1;
     this->width = 8;
     this->max_speed = 0.2f;
@@ -20,10 +20,10 @@ void Plane::draw(glm::mat4 VP) {
     Matrices.model = glm::mat4(1.0f);
 
     glm::mat4 scale = glm::scale(glm::vec3(0.5, 0.5, 0.5));
+    glm::mat4 rotatex = glm::rotate((float) (this->rotation.x * M_PI / 180.0f), glm::vec3(1, 0, 0));
+    glm::mat4 rotatey = glm::rotate((float) (this->rotation.y * M_PI / 180.0f), glm::vec3(0, 1, 0));
+    glm::mat4 rotatez = glm::rotate((float) (this->rotation.z * M_PI / 180.0f), glm::vec3(0, 0, 1));
     glm::mat4 translate = glm::translate (this->position);
-    glm::mat4 rotatex    = glm::rotate((float) (this->rotation.x * M_PI / 180.0f), glm::vec3(1, 0, 0));
-    glm::mat4 rotatey    = glm::rotate((float) (this->rotation.y * M_PI / 180.0f), glm::vec3(0, 1, 0));
-    glm::mat4 rotatez    = glm::rotate((float) (this->rotation.z * M_PI / 180.0f), glm::vec3(0, 0, 1));
 
     axis_rotated *= rotatey * rotatex * rotatez;
     Matrices.model *= (translate * axis_rotated * scale);
