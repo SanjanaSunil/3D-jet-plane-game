@@ -13,6 +13,7 @@ public:
     glm::vec3 speed;
     glm::mat4 axis_rotated;
     float max_height;
+    float max_speed;
     float height, width;
     void draw(glm::mat4 VP);
     glm::vec3 find_relative_pos(glm::vec3 obj_pos);

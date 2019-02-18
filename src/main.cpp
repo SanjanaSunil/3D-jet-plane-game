@@ -158,6 +158,9 @@ void tick_elements() {
     // Check altitude
     dashboard.set_altitude_level(player.position.y, player.max_height);
 
+    // Check speed
+    dashboard.set_speed(player.speed.z, player.max_speed);
+
     // Missile
     if(missile.present) missile.tick();
 

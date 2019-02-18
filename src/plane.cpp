@@ -10,6 +10,7 @@ Plane::Plane(float x, float y, float z, color_t color) {
     this->max_height = 100.0f;
     this->height = 1;
     this->width = 8;
+    this->max_speed = 0.2f;
     speedy = 0.04;
 
     this->object = getBlenderObject("plane.obj", "plane.mtl");
@@ -54,6 +55,6 @@ void Plane::tick() {
 
 void Plane::accelerate() {
     this->speed.z += 0.001f;
-    if(this->speed.z>=0.2f) this->speed.z = 0.2f;
+    if(this->speed.z>=max_speed) this->speed.z = max_speed;
 }
 

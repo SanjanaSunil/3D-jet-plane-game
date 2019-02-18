@@ -163,16 +163,32 @@ void Dashboard::draw(glm::mat4 VP) {
 
 	// Speed
 	float speed_x = 3.5f, speed_y = 3.5f, speed_z = 0.0f;
+	int temp_speed = this->speed;
 	for(int i=0; i<3; ++i)
 	{
+		int digit = temp_speed % 10;
 		Matrices.model = glm::mat4(1.0f);
 		translate = glm::translate (glm::vec3(speed_x, speed_y, speed_z));
 		Matrices.model *= (translate);
     	MVP = VP * Matrices.model;
     	glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
-		for(int j=0; j<7; ++j) draw3DObject(this->seven_segment[j]);
+
+		for(int j=0; j<7; ++j)
+		{
+			if(digit==0 && j!=1) draw3DObject(this->seven_segment[j]);
+			else if(digit==1 && (j==4 || j==6)) draw3DObject(this->seven_segment[j]);
+			else if(digit==2 && j!=3 && j!=6) draw3DObject(this->seven_segment[j]);
+			else if(digit==3 && j!=3 && j!=5) draw3DObject(this->seven_segment[j]);
+			else if(digit==4 && j!=0 && j!=2 && j!=5) draw3DObject(this->seven_segment[j]);
+			else if(digit==5 && j!=4 && j!=5) draw3DObject(this->seven_segment[j]);
+			else if(digit==6 && j!=0 && j!=4) draw3DObject(this->seven_segment[j]);
+			else if(digit==7 && (j==0 || j==4 || j==6)) draw3DObject(this->seven_segment[j]);
+			else if(digit==8) draw3DObject(this->seven_segment[j]);
+			else if(digit==9 && j!=2 && j!=5) draw3DObject(this->seven_segment[j]);
+		}
 
 		speed_x -= 0.6f;
+		temp_speed /= 10;
 	}
 }
 
@@ -183,6 +199,10 @@ void Dashboard::reduce_fuel() {
 void Dashboard::set_altitude_level(float plane_height, float plane_max_height) {
 	this->altitude_level_translate = glm::vec3(0, (plane_height*altitude_bar_height/plane_max_height)-altitude_bar_height/2, 0);
 }
+
+void Dashboard::set_speed(float plane_speed, float plane_max_speed) {
+	this->speed = 702*(float)plane_speed/plane_max_speed;
+} 
 
 void Dashboard::set_position(float x, float y, float z) {
     this->position = glm::vec3(x, y, z);
