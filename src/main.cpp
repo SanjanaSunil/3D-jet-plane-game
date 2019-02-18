@@ -25,7 +25,7 @@ Plane player;
 Dashboard dashboard;
 Missile missile;
 Bomb bomb;
-Parachute parachute_enemy;
+Parachute parachute_enemies[5];
 Target target_point;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
@@ -64,7 +64,8 @@ void draw() {
     if(missile.present) missile.draw(VP);
     if(bomb.present) bomb.draw(VP);
 
-    if(parachute_enemy.present) parachute_enemy.draw(VP);
+    // Parachute enemy
+    for(int i=0; i<5; ++i) if(parachute_enemies[i].present) parachute_enemies[i].draw(VP);
 
     // if(perspective==1) target_point.draw(VP, player.axis_rotated);
     dashboard.draw(FVP);
@@ -156,14 +157,15 @@ void tick_elements() {
     }
 
     // Parachute enemy
-    if(!parachute_enemy.present) parachute_enemy.counter += 1;
-    if(!parachute_enemy.present && parachute_enemy.counter%1200==0)
+    for(int i=0; i<5; ++i)
     {
-        parachute_enemy.counter = 0;
-        parachute_enemy.present = true;
-        parachute_enemy.position = player.find_relative_pos(glm::vec3(0, 5, player.height+player.width+7));
+        if(!parachute_enemies[i].present)
+        {
+            parachute_enemies[i].present = true;
+            parachute_enemies[i].set_position(player.position.x+(rand()%100-50), rand()%20, player.position.z+(rand()%100-50));
+        }
     }
-    if(parachute_enemy.present) parachute_enemy.fall();
+    for(int i=0; i<5; ++i) if(parachute_enemies[i].present) parachute_enemies[i].fall();
 
     // Check altitude
     dashboard.set_altitude_level(player.position.y, player.max_height);
@@ -201,7 +203,7 @@ void initGL(GLFWwindow *window, int width, int height) {
     missile = Missile(0, 0, 0, 1, 0.5, COLOR_RED);
     bomb = Bomb(0, 0, 0);
 
-    parachute_enemy = Parachute(0, 5, player.height+player.width+7);
+    for(int i=0; i<5; ++i) parachute_enemies[i] = Parachute(player.position.x+(rand()%100-50), rand()%20, player.position.z+(rand()%100-50));
 
     programID = LoadShaders("Sample_GL.vert", "Sample_GL.frag");
     Matrices.MatrixID = glGetUniformLocation(programID, "MVP");
