@@ -17,6 +17,7 @@ public:
     void draw(glm::mat4 VP);
     void set_position(float x, float y, float z);
     void tick();
+    bounding_box_t get_dimensions();
     float height, width;
 private:
     VAO *object;

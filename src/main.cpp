@@ -195,7 +195,7 @@ void tick_elements() {
     if(player.position.y>player.max_height || player.position.y<0) quit(window);
 
     // Check collision of bomb and checkpoint
-    if(detect_collision(bomb.get_dimensions(), checkpoint.get_dimensions()))
+    if(detect_collision(bomb.get_dimensions(), checkpoint.get_dimensions()) || detect_collision(missile.get_dimensions(), checkpoint.get_dimensions()))
     {
         checkpoint.position.x = rand()%200 - 100;
         checkpoint.position.z = rand()%200 - 100;

@@ -117,3 +117,6 @@ void Missile::tick() {
     }
 }
 
+bounding_box_t Missile::get_dimensions() {
+    return {position.x, position.y+1, position.z, width, height, width};
+}
