@@ -79,6 +79,59 @@ Dashboard::Dashboard(float x, float y, float z, float plane_height, float plane_
 	};
     this->altitude_level = create3DObject(GL_TRIANGLES, 6, altitude_level_vertex_buffer_data, COLOR_RED, GL_FILL);
 	this->altitude_level_translate = glm::vec3(0, (plane_height*altitude_bar_height/plane_max_height)-altitude_bar_height/2, 0);
+
+	// Speed - 7 segment display
+	GLfloat segment_vertex_buffer_data[18];
+	float width = 0.4f, height = 0.04f; 
+	GLfloat horizontal_segment_vertex_buffer_data[] = {
+	   -width/2, height/2, 0.0f,
+       	width/2, height/2, 0.0f,
+        width/2,-height/2, 0.0f,
+	   -width/2, height/2, 0.0f,
+	    width/2,-height/2, 0.0f,
+	   -width/2,-height/2, 0.0f,
+	};
+	GLfloat vertical_segment_vertex_buffer_data[] = {
+	   -height/2, width/2, 0.0f,
+       	height/2, width/2, 0.0f,
+        height/2,-width/2, 0.0f,
+	   -height/2, width/2, 0.0f,
+	    height/2,-width/2, 0.0f,
+	   -height/2,-width/2, 0.0f,
+	};
+	float segment_x, segment_y;
+	for(int i=0; i<7; ++i) 
+	{	
+		if(i==0) segment_x = 0, segment_y = width - height/2; // top
+		if(i==1) segment_x = 0, segment_y = 0; // middle
+		if(i==2) segment_x = 0, segment_y = -width + height/2; // bottom
+		if(i==3) segment_x = -width/2, segment_y = width/2; // left top
+		if(i==4) segment_x = width/2, segment_y = width/2; // right top
+		if(i==5) segment_x = -width/2, segment_y = -width/2; // left bottom
+		if(i==6) segment_x = width/2, segment_y = -width/2; // right bottom
+
+		if(i<3)
+		{
+			for(int j=0; j<18; ++j) 
+			{	
+				segment_vertex_buffer_data[j] = horizontal_segment_vertex_buffer_data[j];
+				if((j+1)%3==2) segment_vertex_buffer_data[j] += segment_y;
+			}
+			this->seven_segment[i] = create3DObject(GL_TRIANGLES, 6, segment_vertex_buffer_data, COLOR_BLACK, GL_FILL);
+		}
+		else 
+		{
+			for(int j=0; j<18; ++j) 
+			{	
+				segment_vertex_buffer_data[j] = vertical_segment_vertex_buffer_data[j];
+				if((j+1)%3==1) segment_vertex_buffer_data[j] += segment_x;
+				if((j+1)%3==2) segment_vertex_buffer_data[j] += segment_y;
+			}
+			this->seven_segment[i] = create3DObject(GL_TRIANGLES, 6, segment_vertex_buffer_data, COLOR_BLACK, GL_FILL);
+		}		
+
+	}
+
 }
 
 void Dashboard::draw(glm::mat4 VP) {
@@ -107,6 +160,20 @@ void Dashboard::draw(glm::mat4 VP) {
     MVP = VP * Matrices.model;
     glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
     draw3DObject(this->altitude_level);
+
+	// Speed
+	float speed_x = 3.5f, speed_y = 3.5f, speed_z = 0.0f;
+	for(int i=0; i<3; ++i)
+	{
+		Matrices.model = glm::mat4(1.0f);
+		translate = glm::translate (glm::vec3(speed_x, speed_y, speed_z));
+		Matrices.model *= (translate);
+    	MVP = VP * Matrices.model;
+    	glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
+		for(int j=0; j<7; ++j) draw3DObject(this->seven_segment[j]);
+
+		speed_x -= 0.6f;
+	}
 }
 
 void Dashboard::reduce_fuel() {

@@ -23,6 +23,7 @@ private:
     VAO *fuel_bar;
     VAO *altitude_bar;
     VAO *altitude_level;
+    VAO *seven_segment[7];
 };
 
 #endif

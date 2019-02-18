@@ -48,11 +48,12 @@ bounding_box_t Plane::get_dimensions() {
 
 void Plane::tick() {
     this->position = this->find_relative_pos(this->speed);
-    if(this->speed.z>0) this->speed.z -= 0.005f;
+    if(this->speed.z>0) this->speed.z -= 0.0005f;
     if(this->speed.z<0) this->speed.z = 0;
 }
 
 void Plane::accelerate() {
-    this->speed.z += 0.01f;
+    this->speed.z += 0.001f;
+    if(this->speed.z>=0.2f) this->speed.z = 0.2f;
 }
 
