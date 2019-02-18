@@ -1,6 +1,5 @@
 # Todo
 
-- bomb
 - terrain
 - fuel up
 - smoke rings
@@ -8,7 +7,6 @@
 - enemy cannons
 - volcanos
 - health
-- speedometer
 - helicopter view
 - check plane collision with surroundings, parachute enemy
 - check missile collision with parachute enemy
