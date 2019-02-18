@@ -26,3 +26,6 @@ void Bomb::tick() {
     if(this->position.y<=0) this->present = false;
 }
 
+bounding_box_t Bomb::get_dimensions() {
+    return {position.x, position.y+1, position.z, 1.5f, 1.5f, 1.5f};
+}

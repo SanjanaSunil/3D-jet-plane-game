@@ -5,6 +5,10 @@ CMakeFiles/graphics_asgn1.dir/src/bomb.cpp.o
  /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/bomb.cpp
  /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/bomb.h
  /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.h
+CMakeFiles/graphics_asgn1.dir/src/checkpoint.cpp.o
+ /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/checkpoint.cpp
+ /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/checkpoint.h
+ /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.h
 CMakeFiles/graphics_asgn1.dir/src/color.cpp.o
  /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/color.cpp
  /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.h
@@ -21,6 +25,7 @@ CMakeFiles/graphics_asgn1.dir/src/island.cpp.o
  /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o
  /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/bomb.h
+ /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/checkpoint.h
  /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/dashboard.h
  /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/island.h
  /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.cpp

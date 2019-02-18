@@ -8,6 +8,7 @@
 #include "parachute.h"
 #include "target.h"
 #include "island.h"
+#include "checkpoint.h"
 
 using namespace std;
 
@@ -26,6 +27,7 @@ Dashboard dashboard;
 Missile missile;
 Bomb bomb;
 Island island;
+Checkpoint checkpoint;
 Parachute parachute_enemies[5];
 Target target_point;
 
@@ -185,6 +187,7 @@ void tick_elements() {
     // Check for death
     if(dashboard.fuel_scale.x<=0.0f) quit(window); //Fuel check
     if(player.position.y>player.max_height || player.position.y<0) quit(window);
+
 }
 
 
@@ -209,13 +212,11 @@ void initGL(GLFWwindow *window, int width, int height) {
 
     for(int i=0; i<5; ++i) parachute_enemies[i] = Parachute(player.position.x+(rand()%100-50), rand()%20, player.position.z+(rand()%100-50));
 
-    int xdir = rand()%2;
     float xpos = player.position.x + rand()%50 + 50;
-    if(xdir==1) xpos *= -1;
-    int zdir = rand()%2;
     float zpos = player.position.z + rand()%50 + 50;
-    if(zdir==1) zpos *= -1;
     island = Island(xpos, 3.0f, zpos);
+
+    // checkpoint = Checkpoint();
 
     programID = LoadShaders("Sample_GL.vert", "Sample_GL.frag");
     Matrices.MatrixID = glGetUniformLocation(programID, "MVP");

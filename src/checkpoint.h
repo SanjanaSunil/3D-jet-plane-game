@@ -1,22 +1,22 @@
 #include "main.h"
 
-#ifndef BOMB_H
-#define BOMB_H
+#ifndef CHECKPOINT_H
+#define CHECKPOINT_H
 
 
-class Bomb {
+class Checkpoint {
 public:
-    Bomb() {}
-    Bomb(float x, float y, float z);
+    Checkpoint() {}
+    Checkpoint(float x, float y, float z);
     glm::vec3 position;
-    float speed;
-    bool present;
+    glm::vec3 arrow_position;
     void draw(glm::mat4 VP);
     void set_position(float x, float y, float z);
-    void tick();
+    void tick(float plane_height);
     bounding_box_t get_dimensions();
 private:
     VAO *object;
+    VAO *arrow;
 };
 
 #endif

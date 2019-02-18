@@ -5,6 +5,10 @@ CMakeFiles/graphics_asgn1.dir/src/bomb.cpp.o: ../src/bomb.cpp
 CMakeFiles/graphics_asgn1.dir/src/bomb.cpp.o: ../src/bomb.h
 CMakeFiles/graphics_asgn1.dir/src/bomb.cpp.o: ../src/main.h
 
+CMakeFiles/graphics_asgn1.dir/src/checkpoint.cpp.o: ../src/checkpoint.cpp
+CMakeFiles/graphics_asgn1.dir/src/checkpoint.cpp.o: ../src/checkpoint.h
+CMakeFiles/graphics_asgn1.dir/src/checkpoint.cpp.o: ../src/main.h
+
 CMakeFiles/graphics_asgn1.dir/src/color.cpp.o: ../src/color.cpp
 CMakeFiles/graphics_asgn1.dir/src/color.cpp.o: ../src/main.h
 
@@ -20,6 +24,7 @@ CMakeFiles/graphics_asgn1.dir/src/island.cpp.o: ../src/island.h
 CMakeFiles/graphics_asgn1.dir/src/island.cpp.o: ../src/main.h
 
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/bomb.h
+CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/checkpoint.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/dashboard.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/island.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/main.cpp
