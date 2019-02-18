@@ -4,6 +4,7 @@
 #include "plane.h"
 #include "dashboard.h"
 #include "missile.h"
+#include "bomb.h"
 #include "parachute.h"
 #include "target.h"
 
@@ -22,6 +23,7 @@ Sea sea;
 Plane player;
 Dashboard dashboard;
 Missile missile;
+Bomb bomb;
 Parachute parachute_enemy;
 Target target_point;
 
@@ -59,6 +61,7 @@ void draw() {
     sea.draw(VP);
     player.draw(VP);
     if(missile.present) missile.draw(VP);
+    if(bomb.present) bomb.draw(VP);
 
     if(parachute_enemy.present) parachute_enemy.draw(VP);
 
@@ -112,6 +115,12 @@ void tick_input(GLFWwindow *window) {
         missile.axis_rotated = player.axis_rotated;
         missile.initial_pos = player.position;
     }
+    // Bomb
+    if(right_click && !bomb.present)
+    {
+        bomb.present = true;
+        bomb.position = player.position;
+    }
 }
 
 void tick_elements() {
@@ -163,6 +172,8 @@ void tick_elements() {
 
     // Missile
     if(missile.present) missile.tick();
+    // Bomb
+    if(bomb.present) bomb.tick();
 
     // Check for death
     if(dashboard.fuel_scale.x<=0.0f) quit(window); //Fuel check
@@ -178,7 +189,7 @@ void initGL(GLFWwindow *window, int width, int height) {
 
     sea = Sea(0, 0, 0, COLOR_BLUE);
 
-    player = Plane(0, 0.1f, 0, COLOR_RED);
+    player = Plane(0, 5, 0, COLOR_RED);
     cam_eye = glm::vec3(0, 0, player.width);
     cam_target = glm::vec3(0, 0, player.position.z+10);
     cam_up = glm::vec3(0, 1, 0);
@@ -187,6 +198,7 @@ void initGL(GLFWwindow *window, int width, int height) {
     target_point = Target(0, 0, player.height+player.width, 0.2, COLOR_BLACK);
 
     missile = Missile(0, 0, 0, 1, 0.5, COLOR_RED);
+    bomb = Bomb(0, 0, 0);
 
     parachute_enemy = Parachute(0, 5, player.height+player.width+7);
 
