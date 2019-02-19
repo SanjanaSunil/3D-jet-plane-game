@@ -47,6 +47,11 @@ glm::vec3 cam_up;
 
 int perspective;
 
+// Initial horizontal angle : toward -Z
+float horizontalAngle = 3.14f;
+// Initial vertical angle : none
+float verticalAngle = 0.0f;
+
 Timer t60(1.0 / 60);
 
 void draw() {
@@ -108,6 +113,7 @@ void tick_input(GLFWwindow *window) {
     int two = glfwGetKey(window, GLFW_KEY_2);
     int three = glfwGetKey(window, GLFW_KEY_3);
     int four = glfwGetKey(window, GLFW_KEY_4);
+    int five = glfwGetKey(window, GLFW_KEY_5);
 
     int up = glfwGetKey(window, GLFW_KEY_W);
     int down = glfwGetKey(window, GLFW_KEY_S);
@@ -140,6 +146,8 @@ void tick_input(GLFWwindow *window) {
     if (three) perspective = 3;
     // Top view
     if (four) perspective = 4;
+    // Helicopter cam view
+    if (five) perspective = 5;
 
     // Missile
     if(left_click && !missile.present) 
@@ -185,6 +193,27 @@ void tick_elements() {
         cam_eye = glm::vec3(player.position.x, player.position.y+30, player.position.z);
         cam_target = player.position;
         cam_up = glm::vec3(0, 0, 1);
+    }
+
+    if(perspective==5) {
+
+        double xpos, ypos;
+	    glfwGetCursorPos(window, &xpos, &ypos);
+        glfwSetCursorPos(window, 600/2, 600/2);
+
+        float mouseSpeed = 0.005f;
+        horizontalAngle += mouseSpeed * float(600/2 - xpos );
+	    verticalAngle   += mouseSpeed * float( 600/2 - ypos );
+
+        glm::vec3 direction(
+            cos(verticalAngle) * sin(horizontalAngle), 
+            sin(verticalAngle),
+            cos(verticalAngle) * cos(horizontalAngle)
+        );
+
+        cam_eye = glm::vec3(player.position.x, player.position.y+10, player.position.z);
+        cam_target = cam_eye + direction;
+        cam_up = glm::vec3(0, 1, 0);
     }
 
     // Parachute enemy
