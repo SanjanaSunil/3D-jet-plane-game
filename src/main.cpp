@@ -283,8 +283,8 @@ void tick_elements() {
         
         for(int i=0; i<3; ++i)
         {
-            check_x = checkpoint.position.x<volcanos[i].position.x+10 && checkpoint.position.x>volcanos[i].position.x-10;
-            check_z = checkpoint.position.z<volcanos[i].position.z+10 && checkpoint.position.z>volcanos[i].position.z-10;
+            check_x = checkpoint.position.x<volcanos[i].position.x+15 && checkpoint.position.x>volcanos[i].position.x-15;
+            check_z = checkpoint.position.z<volcanos[i].position.z+15 && checkpoint.position.z>volcanos[i].position.z-15;
 
             if(check_x && check_z)
             {
