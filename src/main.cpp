@@ -91,7 +91,9 @@ void draw() {
     // Draw smoke ring
     if(smoke_ring.present) smoke_ring.draw(VP);
 
-    // if(perspective==1) target_point.draw(VP, player.axis_rotated);
+    // Target view
+    if(perspective==1) target_point.draw(VP, player.axis_rotated);
+    
     dashboard.draw(FVP);
 
 }
@@ -298,7 +300,7 @@ void initGL(GLFWwindow *window, int width, int height) {
     cam_up = glm::vec3(0, 1, 0);
 
     dashboard = Dashboard(0, 0, 0, player.position.y, player.max_height);
-    target_point = Target(0, 0, player.height+player.width, 0.2, COLOR_BLACK);
+    target_point = Target(0, 0, player.height+player.width, 0.01, COLOR_BLACK);
 
     smoke_ring = Ring(30, 8, 50);
 
