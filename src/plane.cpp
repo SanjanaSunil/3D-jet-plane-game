@@ -10,7 +10,7 @@ Plane::Plane(float x, float y, float z, color_t color) {
     this->score = 0;
     this->max_height = 50.0f;
     this->height = 1;
-    this->width = 8;
+    this->width = 7.5;
     this->max_speed = 0.2f;
     speedy = 0.04;
 

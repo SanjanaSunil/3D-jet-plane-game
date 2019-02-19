@@ -21,3 +21,6 @@ void Volcano::set_position(float x, float y, float z) {
     this->position = glm::vec3(x, y, z);
 }
 
+bounding_box_t Volcano::get_dimensions() {
+    return {position.x, position.y, position.z, 10.0f, 30.0f, 10.0f};
+}

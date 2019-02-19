@@ -254,8 +254,8 @@ void tick_elements() {
     if(player.position.y<0) quit(window);
     for(int i=0; i<3; ++i)
     {
-        bool check_x = player.position.x<volcanos[i].position.x+10 && player.position.x>volcanos[i].position.x-10;
-        bool check_z = player.position.z<volcanos[i].position.z+10 && player.position.z>volcanos[i].position.z-10;
+        bool check_x = player.position.x<volcanos[i].position.x+20 && player.position.x>volcanos[i].position.x-20;
+        bool check_z = player.position.z<volcanos[i].position.z+20 && player.position.z>volcanos[i].position.z-20;
 
         if(check_x && check_z) quit(window);
     }
