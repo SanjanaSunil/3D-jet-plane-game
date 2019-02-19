@@ -39,5 +39,5 @@ void Checkpoint::tick(float plane_height) {
 }
 
 bounding_box_t Checkpoint::get_dimensions() {
-    return {position.x, position.y+1, position.z, 7.0f, 2.0f, 7.0f};
+    return {position.x, position.y+1, position.z, 7.0f, 7.0f, 7.0f};
 }

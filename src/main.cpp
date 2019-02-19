@@ -31,6 +31,7 @@ Missile missile;
 Bomb bomb;
 Island island;
 Checkpoint checkpoint;
+Bomb enemy_bomb;
 Parachute parachute_enemies[5];
 Target target_point;
 Volcano volcanos[3];
@@ -93,6 +94,9 @@ void draw() {
 
     // Target view
     if(perspective==1) target_point.draw(VP, player.axis_rotated);
+    
+    // Draw enemy bomb
+    if(enemy_bomb.present) enemy_bomb.draw(VP);
     
     dashboard.draw(FVP);
 
@@ -237,9 +241,16 @@ void tick_elements() {
 
     // Adjust arrow of checkpoint
     checkpoint.tick(player.position.y);
+    if(!enemy_bomb.present) 
+    {
+        enemy_bomb = Bomb(checkpoint.position.x, checkpoint.position.y, checkpoint.position.z);
+        enemy_bomb.present = true;
+    }
+    else enemy_bomb.shoot();    
 
     // Check for death
     if(dashboard.fuel_scale.x<=0.0f) quit(window); //Fuel check
+    if(detect_collision(enemy_bomb.get_dimensions(), player.get_dimensions())) quit(window);
     if(player.position.y<0) quit(window);
     for(int i=0; i<3; ++i)
     {
@@ -317,6 +328,8 @@ void initGL(GLFWwindow *window, int width, int height) {
     bool check_x = checkpoint.position.x>(island.position.x-10) && checkpoint.position.x<(island.position.x+10);
     bool check_z = checkpoint.position.z>(island.position.z-10) && checkpoint.position.z<(island.position.z+10);
     if(check_x && check_z) checkpoint.position.x *= -1;
+
+    enemy_bomb = Bomb(checkpoint.position.x, checkpoint.position.y, checkpoint.position.z);
 
     int pos_x = -80;
     int pos_z = 0;

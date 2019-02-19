@@ -1,10 +1,12 @@
 #include "bomb.h"
 #include "main.h"
-
+#include <iostream>
+using namespace std;
 Bomb::Bomb(float x, float y, float z) {
     this->position = glm::vec3(x, y, z);
     this->present = false;
-    speed = 0.08f;
+    speedy = 0.08f;
+    speedx = 0.5f;
     this->object = getBlenderObject("bomb.obj", "bomb.mtl");
 }
 
@@ -22,8 +24,14 @@ void Bomb::set_position(float x, float y, float z) {
 }
 
 void Bomb::tick() {
-    this->position.y -= speed;
+    this->position.y -= speedy;
     if(this->position.y<=0) this->present = false;
+}
+
+void Bomb::shoot() {
+    this->position.y += 0.2;
+    this->position.x += speedx;
+    if(this->position.y>20) this->present = false;
 }
 
 bounding_box_t Bomb::get_dimensions() {
