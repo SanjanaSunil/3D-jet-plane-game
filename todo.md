@@ -4,4 +4,5 @@
 - enemy cannons (shooting)
 - health
 - helicopter view
-- check plane collision with surroundings, fuel uop
+- check plane collision with surroundings, fuel up
+- add bounding box for volcanos
