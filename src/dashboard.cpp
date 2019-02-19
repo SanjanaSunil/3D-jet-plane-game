@@ -129,9 +129,19 @@ Dashboard::Dashboard(float x, float y, float z, float plane_height, float plane_
 			}
 			this->seven_segment[i] = create3DObject(GL_TRIANGLES, 6, segment_vertex_buffer_data, COLOR_BLACK, GL_FILL);
 		}		
-
 	}
 
+	// Health bar
+	this->health_scale = glm::vec3(1.0f, 1.0f, 1.0f);
+    GLfloat health_vertex_buffer_data[] = {
+	    2.05f, 2.9f, 0.0f,
+        3.75f, 2.9f, 0.0f,
+        3.75f, 2.7f, 0.0f,
+        2.05f, 2.9f, 0.0f,
+        2.05f, 2.7f, 0.0f,
+	    3.75f, 2.7f, 0.0f
+	};
+    this->health_bar = create3DObject(GL_TRIANGLES, 6, health_vertex_buffer_data, COLOR_GREEN, GL_FILL);
 }
 
 void Dashboard::draw(glm::mat4 VP) {
@@ -190,6 +200,16 @@ void Dashboard::draw(glm::mat4 VP) {
 		speed_x -= 0.6f;
 		temp_speed /= 10;
 	}
+
+	// Health
+	Matrices.model = glm::mat4(1.0f);
+    glm::mat4 translate1 = glm::translate (glm::vec3(-2.9, -2.9, 0));
+	glm::mat4 translate2 = glm::translate (glm::vec3(2.9, 2.9, 0));
+	scale = glm::scale (health_scale);
+    Matrices.model *= (translate2*scale*translate1);
+    MVP = VP * Matrices.model;
+    glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
+    draw3DObject(this->health_bar);
 }
 
 void Dashboard::reduce_fuel() {
@@ -212,6 +232,11 @@ void Dashboard::set_position(float x, float y, float z) {
     this->position = glm::vec3(x, y, z);
 }
 
-void Dashboard::tick() {
+void Dashboard::reduce_health() {
+	health_scale.x -= 0.0003f;
 }
 
+int Dashboard::alive() {
+	if(fuel_scale.x<=0.0f || health_scale.x<0) return 0;
+	else return 1;
+}

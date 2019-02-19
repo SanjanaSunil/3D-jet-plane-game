@@ -249,8 +249,7 @@ void tick_elements() {
     else enemy_bomb.shoot();    
 
     // Check for death
-    if(dashboard.fuel_scale.x<=0.0f) quit(window); //Fuel check
-    if(detect_collision(enemy_bomb.get_dimensions(), player.get_dimensions())) quit(window);
+    if(detect_collision(enemy_bomb.get_dimensions(), player.get_dimensions())) dashboard.reduce_health();
     if(player.position.y<0) quit(window);
     for(int i=0; i<3; ++i)
     {
@@ -259,8 +258,9 @@ void tick_elements() {
 
         if(check_x && check_z) quit(window);
     }
-    for(int i=0; i<5; ++i) if(parachute_enemies[i].present && detect_collision(player.get_dimensions(), parachute_enemies[i].get_dimensions())) quit(window);
-    
+    for(int i=0; i<5; ++i) if(parachute_enemies[i].present && detect_collision(player.get_dimensions(), parachute_enemies[i].get_dimensions())) dashboard.reduce_health();
+    if(!dashboard.alive()) quit(window);
+
     // Check collision of missile/bomb and parachute enemies
     for(int i=0; i<5; ++i)
     {   

@@ -10,6 +10,7 @@ public:
     Dashboard(float x, float y, float z, float plane_height, float plane_max_height);
     glm::vec3 position;
     glm::vec3 fuel_scale;
+    glm::vec3 health_scale;
     glm::vec3 altitude_level_translate;
     float altitude_bar_height;
     float radius;
@@ -21,12 +22,14 @@ public:
     void set_position(float x, float y, float z);
     void set_altitude_level(float plane_height, float plane_max_height);
     void set_speed(float plane_speed, float plane_max_speed);
-    void tick();
+    void reduce_health();
+    int alive();
 private:
     VAO *fuel_bar;
     VAO *altitude_bar;
     VAO *altitude_level;
     VAO *seven_segment[7];
+    VAO *health_bar;
 };
 
 #endif
