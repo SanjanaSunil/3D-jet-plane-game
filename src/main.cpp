@@ -114,7 +114,7 @@ void tick_input(GLFWwindow *window) {
     int left_click = glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT);
     int right_click = glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT);
 
-    if (up) player.position.y += player.speedy;
+    if (up) if(player.position.y<player.max_height-player.speedy) player.position.y += player.speedy;
     if (down) player.position.y -= player.speedy;
     if (tilt_left) player.rotation.z = -1;
     if (tilt_right) player.rotation.z = 1;
@@ -238,13 +238,24 @@ void tick_elements() {
 
     // Check for death
     if(dashboard.fuel_scale.x<=0.0f) quit(window); //Fuel check
-    if(player.position.y>player.max_height || player.position.y<0) quit(window);
+    if(player.position.y<0) quit(window);
     for(int i=0; i<3; ++i)
     {
         bool check_x = player.position.x<volcanos[i].position.x+10 && player.position.x>volcanos[i].position.x-10;
         bool check_z = player.position.z<volcanos[i].position.z+10 && player.position.z>volcanos[i].position.z-10;
 
         if(check_x && check_z) quit(window);
+    }
+    for(int i=0; i<5; ++i) if(parachute_enemies[i].present && detect_collision(player.get_dimensions(), parachute_enemies[i].get_dimensions())) quit(window);
+    
+    // Check collision of missile/bomb and parachute enemies
+    for(int i=0; i<5; ++i)
+    {   
+        if(parachute_enemies[i].present)
+        {
+            if(detect_collision(bomb.get_dimensions(), parachute_enemies[i].get_dimensions())) parachute_enemies[i].present = false;
+            if(detect_collision(missile.get_dimensions(), parachute_enemies[i].get_dimensions())) parachute_enemies[i].present = false;
+        }
     }
 
     // Check collision of bomb and checkpoint
