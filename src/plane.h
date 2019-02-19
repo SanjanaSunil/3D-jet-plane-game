@@ -12,6 +12,7 @@ public:
     glm::vec3 rotation;
     glm::vec3 speed;
     glm::mat4 axis_rotated;
+    int score;
     float max_height;
     float max_speed;
     float height, width;

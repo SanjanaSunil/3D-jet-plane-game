@@ -109,6 +109,8 @@ volcano.h
 /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/volcano.h
 fuelup.h
 /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/fuelup.h
+ring.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/ring.h
 
 /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.h
 iostream
@@ -213,6 +215,16 @@ main.h
 /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.h
 
 /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/plane.h
+main.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.h
+
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/ring.cpp
+ring.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/ring.h
+main.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.h
+
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/ring.h
 main.h
 /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.h
 

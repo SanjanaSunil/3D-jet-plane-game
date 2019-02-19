@@ -38,6 +38,7 @@ CMakeFiles/graphics_asgn1.dir/src/main.cpp.o
  /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/missile.h
  /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/parachute.h
  /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/plane.h
+ /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/ring.h
  /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/sea.h
  /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/target.h
  /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/timer.h
@@ -60,6 +61,10 @@ CMakeFiles/graphics_asgn1.dir/src/plane.cpp.o
  /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.h
  /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/plane.cpp
  /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/plane.h
+CMakeFiles/graphics_asgn1.dir/src/ring.cpp.o
+ /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.h
+ /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/ring.cpp
+ /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/ring.h
 CMakeFiles/graphics_asgn1.dir/src/sea.cpp.o
  /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.h
  /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/sea.cpp

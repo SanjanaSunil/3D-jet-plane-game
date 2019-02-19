@@ -11,6 +11,7 @@
 #include "checkpoint.h"
 #include "volcano.h"
 #include "fuelup.h"
+#include "ring.h"
 
 using namespace std;
 
@@ -34,6 +35,7 @@ Parachute parachute_enemies[5];
 Target target_point;
 Volcano volcanos[3];
 Fuelup fuelups[2];
+Ring smoke_ring;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
@@ -85,6 +87,9 @@ void draw() {
 
     // Drawing volcanos
     for(int i=0; i<3; ++i) volcanos[i].draw(VP);
+
+    // Draw smoke ring
+    if(smoke_ring.present) smoke_ring.draw(VP);
 
     // if(perspective==1) target_point.draw(VP, player.axis_rotated);
     dashboard.draw(FVP);
@@ -205,6 +210,18 @@ void tick_elements() {
         }
     }
 
+    // Smoke ring
+    if(!smoke_ring.present)
+    {
+        smoke_ring.present = true;
+        smoke_ring.set_position(player.position.x+(rand()%100-50), rand()%20+5, player.position.z+(rand()%100-50));
+    }
+    if(detect_collision(player.get_dimensions(), smoke_ring.get_dimensions()))
+    {
+        player.score++;
+        smoke_ring.present = false;
+    }
+
     // Check altitude
     dashboard.set_altitude_level(player.position.y, player.max_height);
 
@@ -271,6 +288,8 @@ void initGL(GLFWwindow *window, int width, int height) {
 
     dashboard = Dashboard(0, 0, 0, player.position.y, player.max_height);
     target_point = Target(0, 0, player.height+player.width, 0.2, COLOR_BLACK);
+
+    smoke_ring = Ring(30, 8, 50);
 
     missile = Missile(0, 0, 0, 1, 0.5, COLOR_RED);
     bomb = Bomb(0, 0, 0);
