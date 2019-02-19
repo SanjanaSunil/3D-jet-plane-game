@@ -19,14 +19,14 @@ Plane::Plane(float x, float y, float z, color_t color) {
 void Plane::draw(glm::mat4 VP) {
     Matrices.model = glm::mat4(1.0f);
 
-    glm::mat4 scale = glm::scale(glm::vec3(0.5, 0.5, 0.5));
+    // glm::mat4 scale = glm::scale(glm::vec3(0.8, 0.8, 0.8));
     glm::mat4 rotatex = glm::rotate((float) (this->rotation.x * M_PI / 180.0f), glm::vec3(1, 0, 0));
     glm::mat4 rotatey = glm::rotate((float) (this->rotation.y * M_PI / 180.0f), glm::vec3(0, 1, 0));
     glm::mat4 rotatez = glm::rotate((float) (this->rotation.z * M_PI / 180.0f), glm::vec3(0, 0, 1));
     glm::mat4 translate = glm::translate (this->position);
 
     axis_rotated *= rotatey * rotatex * rotatez;
-    Matrices.model *= (translate * axis_rotated * scale);
+    Matrices.model *= (translate * axis_rotated);
     glm::mat4 MVP = VP * Matrices.model;
     glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
     draw3DObject(this->object);

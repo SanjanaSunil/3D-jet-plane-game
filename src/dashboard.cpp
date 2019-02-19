@@ -196,6 +196,10 @@ void Dashboard::reduce_fuel() {
 	if(fuel_scale.x>0.0f) fuel_scale.x -= 0.0003f;
 }
 
+void Dashboard::refuel() {
+	fuel_scale.x = 1.0f;
+}
+
 void Dashboard::set_altitude_level(float plane_height, float plane_max_height) {
 	this->altitude_level_translate = glm::vec3(0, (plane_height*altitude_bar_height/plane_max_height)-altitude_bar_height/2, 0);
 }

@@ -16,6 +16,10 @@ CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o: ../src/dashboard.cpp
 CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o: ../src/dashboard.h
 CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o: ../src/main.h
 
+CMakeFiles/graphics_asgn1.dir/src/fuelup.cpp.o: ../src/fuelup.cpp
+CMakeFiles/graphics_asgn1.dir/src/fuelup.cpp.o: ../src/fuelup.h
+CMakeFiles/graphics_asgn1.dir/src/fuelup.cpp.o: ../src/main.h
+
 CMakeFiles/graphics_asgn1.dir/src/input.cpp.o: ../src/input.cpp
 CMakeFiles/graphics_asgn1.dir/src/input.cpp.o: ../src/main.h
 
@@ -26,6 +30,7 @@ CMakeFiles/graphics_asgn1.dir/src/island.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/bomb.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/checkpoint.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/dashboard.h
+CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/fuelup.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/island.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/main.h

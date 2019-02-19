@@ -40,6 +40,16 @@ main.h
 main.h
 /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.h
 
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/fuelup.cpp
+fuelup.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/fuelup.h
+main.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.h
+
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/fuelup.h
+main.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.h
+
 /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/input.cpp
 iostream
 -
@@ -97,6 +107,8 @@ checkpoint.h
 /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/checkpoint.h
 volcano.h
 /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/volcano.h
+fuelup.h
+/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/fuelup.h
 
 /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/src/main.h
 iostream

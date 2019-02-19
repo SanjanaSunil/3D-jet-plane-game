@@ -10,6 +10,7 @@
 #include "island.h"
 #include "checkpoint.h"
 #include "volcano.h"
+#include "fuelup.h"
 
 using namespace std;
 
@@ -32,6 +33,7 @@ Checkpoint checkpoint;
 Parachute parachute_enemies[5];
 Target target_point;
 Volcano volcanos[3];
+Fuelup fuelups[2];
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
@@ -71,6 +73,9 @@ void draw() {
 
     // Parachute enemy
     for(int i=0; i<5; ++i) if(parachute_enemies[i].present) parachute_enemies[i].draw(VP);
+
+    // Fuelups
+    for(int i=0; i<2; ++i) if(fuelups[i].present) fuelups[i].draw(VP);
 
     // Drawing island
     island.draw(VP);
@@ -182,6 +187,24 @@ void tick_elements() {
     }
     for(int i=0; i<5; ++i) if(parachute_enemies[i].present) parachute_enemies[i].fall();
 
+    // Fuelups
+    for(int i=0; i<2; ++i)
+    {
+        if(!fuelups[i].present)
+        {
+            fuelups[i].present = true;
+            fuelups[i].set_position(player.position.x+(rand()%100-50), rand()%20, player.position.z+(rand()%100-50));
+        }
+    }
+    for(int i=0; i<2; ++i)
+    {
+        if(detect_collision(player.get_dimensions(), fuelups[i].get_dimensions()))
+        {
+            fuelups[i].present = false;
+            dashboard.refuel();
+        }
+    }
+
     // Check altitude
     dashboard.set_altitude_level(player.position.y, player.max_height);
 
@@ -254,6 +277,8 @@ void initGL(GLFWwindow *window, int width, int height) {
 
     for(int i=0; i<5; ++i) parachute_enemies[i] = Parachute(player.position.x+(rand()%100-50), rand()%20, player.position.z+(rand()%100-50));
 
+    for(int i=0; i<2; ++i) fuelups[i] = Fuelup(player.position.x+(rand()%100-50), rand()%20, player.position.z+(rand()%100-50), COLOR_PURPLE);
+
     island = Island(74, 3.0f, 85);
 
     checkpoint = Checkpoint(player.position.x+(rand()%100)+50, 0, player.position.z+(rand()%100)+50);
@@ -261,7 +286,7 @@ void initGL(GLFWwindow *window, int width, int height) {
     bool check_z = checkpoint.position.z>(island.position.z-10) && checkpoint.position.z<(island.position.z+10);
     if(check_x && check_z) checkpoint.position.x *= -1;
 
-    int pos_x = -100;
+    int pos_x = -80;
     int pos_z = 0;
     for(int i=0; i<3; ++i)
     {

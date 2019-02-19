@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/graphics_asgn1.dir/src/checkpoint.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/color.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o"
+  "CMakeFiles/graphics_asgn1.dir/src/fuelup.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/input.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/island.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/main.cpp.o"
