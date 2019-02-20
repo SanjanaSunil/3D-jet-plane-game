@@ -310,8 +310,16 @@ void tick_elements() {
     {   
         if(parachute_enemies[i].present)
         {
-            if(detect_collision(bomb.get_dimensions(), parachute_enemies[i].get_dimensions())) parachute_enemies[i].present = false;
-            if(detect_collision(missile.get_dimensions(), parachute_enemies[i].get_dimensions())) parachute_enemies[i].present = false;
+            if(detect_collision(bomb.get_dimensions(), parachute_enemies[i].get_dimensions())) 
+            {
+                parachute_enemies[i].present = false;
+                player.score += 20;
+            }
+            if(detect_collision(missile.get_dimensions(), parachute_enemies[i].get_dimensions())) 
+            {
+                parachute_enemies[i].present = false;
+                player.score += 20;
+            }
         }
     }
 
