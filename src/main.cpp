@@ -55,6 +55,12 @@ float verticalAngle = 0.0f;
 
 Timer t60(1.0 / 60);
 
+void end_game() {
+    cout << endl;
+    cout << "Your final score is: " << player.score << endl;
+    quit(window);
+}
+
 void draw() {
     // clear the color and depth in the frame buffer
     glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -262,7 +268,7 @@ void tick_elements() {
     }
     if(detect_collision(player.get_dimensions(), smoke_ring.get_dimensions()))
     {
-        player.score++;
+        player.score += 10;
         smoke_ring.present = false;
     }
 
@@ -288,16 +294,16 @@ void tick_elements() {
 
     // Check for death
     if(detect_collision(enemy_bomb.get_dimensions(), player.get_dimensions())) dashboard.reduce_health();
-    if(player.position.y<0) quit(window);
+    if(player.position.y<0) end_game();
     for(int i=0; i<3; ++i)
     {
         bool check_x = player.position.x<volcanos[i].position.x+20 && player.position.x>volcanos[i].position.x-20;
         bool check_z = player.position.z<volcanos[i].position.z+20 && player.position.z>volcanos[i].position.z-20;
 
-        if(check_x && check_z) quit(window);
+        if(check_x && check_z) end_game();
     }
     for(int i=0; i<5; ++i) if(parachute_enemies[i].present && detect_collision(player.get_dimensions(), parachute_enemies[i].get_dimensions())) dashboard.reduce_health();
-    if(!dashboard.alive()) quit(window);
+    if(!dashboard.alive()) end_game();
 
     // Check collision of missile/bomb and parachute enemies
     for(int i=0; i<5; ++i)
