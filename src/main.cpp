@@ -40,6 +40,7 @@ Ring smoke_ring;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
+double scroll_offset_x, scroll_offset_y;
 
 glm::vec3 cam_eye;
 glm::vec3 cam_target;
@@ -206,14 +207,22 @@ void tick_elements() {
 	    verticalAngle   += mouseSpeed * float( 600/2 - ypos );
 
         glm::vec3 direction(
-            cos(verticalAngle) * sin(horizontalAngle), 
-            sin(verticalAngle),
-            cos(verticalAngle) * cos(horizontalAngle)
+            20 * cos(verticalAngle) * sin(horizontalAngle), 
+            20 * sin(verticalAngle),
+            20 * cos(verticalAngle) * cos(horizontalAngle)
         );
 
-        cam_eye = glm::vec3(player.position.x, player.position.y+10, player.position.z);
-        cam_target = cam_eye + direction;
-        cam_up = glm::vec3(0, 1, 0);
+        glm::vec3 right = glm::vec3(
+            sin(horizontalAngle - 3.14f/2.0f),
+            0,
+            cos(horizontalAngle - 3.14f/2.0f)
+        );
+
+        cam_target = glm::vec3(player.position.x, player.position.y, player.position.z);
+        cam_eye = cam_target + direction;
+        cam_up = glm::cross( right, direction );
+
+        cout << scroll_offset_x << " " << scroll_offset_y << endl;
     }
 
     // Parachute enemy
@@ -331,6 +340,7 @@ void initGL(GLFWwindow *window, int width, int height) {
     glfwSetWindowTitle(window, "Link - The Fighter Jetplane");
 
     perspective = 1;
+    scroll_offset_x = 0, scroll_offset_y = 0;
 
     sea = Sea(0, 0, 0, COLOR_BLUE);
 
@@ -342,7 +352,7 @@ void initGL(GLFWwindow *window, int width, int height) {
     dashboard = Dashboard(0, 0, 0, player.position.y, player.max_height);
     target_point = Target(0, 0, player.height+player.width, 0.01, COLOR_BLACK);
 
-    smoke_ring = Ring(30, 8, 50);
+    smoke_ring = Ring(40, 8, 50);
 
     missile = Missile(0, 0, 0, 1, 0.5, COLOR_RED);
     bomb = Bomb(0, 0, 0);

@@ -19,6 +19,8 @@
 #include <glm/gtx/transform.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
+extern double scroll_offset_x, scroll_offset_y;
+
 struct color_t {
     int r;
     int g;
