@@ -198,6 +198,8 @@ void tick_elements() {
 
     if(perspective==5) {
 
+        float radius = 20.0f + (scroll_offset_x+scroll_offset_y)/8;
+
         double xpos, ypos;
 	    glfwGetCursorPos(window, &xpos, &ypos);
         glfwSetCursorPos(window, 600/2, 600/2);
@@ -207,9 +209,9 @@ void tick_elements() {
 	    verticalAngle   += mouseSpeed * float( 600/2 - ypos );
 
         glm::vec3 direction(
-            20 * cos(verticalAngle) * sin(horizontalAngle), 
-            20 * sin(verticalAngle),
-            20 * cos(verticalAngle) * cos(horizontalAngle)
+            radius * cos(verticalAngle) * sin(horizontalAngle), 
+            radius * sin(verticalAngle),
+            radius * cos(verticalAngle) * cos(horizontalAngle)
         );
 
         glm::vec3 right = glm::vec3(
@@ -221,8 +223,6 @@ void tick_elements() {
         cam_target = glm::vec3(player.position.x, player.position.y, player.position.z);
         cam_eye = cam_target + direction;
         cam_up = glm::cross( right, direction );
-
-        cout << scroll_offset_x << " " << scroll_offset_y << endl;
     }
 
     // Parachute enemy
