@@ -28,28 +28,28 @@ The CXX compiler identification is GNU, found in "/home/sanjanasunil/subjects/gr
 Determining if the C compiler works passed with the following output:
 Change Dir: /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_66842/fast"
-/usr/bin/make -f CMakeFiles/cmTC_66842.dir/build.make CMakeFiles/cmTC_66842.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_e7298/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e7298.dir/build.make CMakeFiles/cmTC_e7298.dir/build
 make[1]: Entering directory '/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_66842.dir/testCCompiler.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_66842.dir/testCCompiler.c.o   -c /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_66842
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_66842.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_66842.dir/testCCompiler.c.o  -o cmTC_66842 
+Building C object CMakeFiles/cmTC_e7298.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_e7298.dir/testCCompiler.c.o   -c /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_e7298
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e7298.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_e7298.dir/testCCompiler.c.o  -o cmTC_e7298 
 make[1]: Leaving directory '/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_ba5e0/fast"
-/usr/bin/make -f CMakeFiles/cmTC_ba5e0.dir/build.make CMakeFiles/cmTC_ba5e0.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_22c73/fast"
+/usr/bin/make -f CMakeFiles/cmTC_22c73.dir/build.make CMakeFiles/cmTC_22c73.dir/build
 make[1]: Entering directory '/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_ba5e0.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_ba5e0.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_ba5e0
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ba5e0.dir/link.txt --verbose=1
-/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_ba5e0.dir/CMakeCCompilerABI.c.o  -o cmTC_ba5e0 
+Building C object CMakeFiles/cmTC_22c73.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_22c73.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_22c73
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_22c73.dir/link.txt --verbose=1
+/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_22c73.dir/CMakeCCompilerABI.c.o  -o cmTC_22c73 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper
@@ -61,9 +61,9 @@ Thread model: posix
 gcc version 7.3.0 (Ubuntu 7.3.0-27ubuntu1~18.04) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_ba5e0' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccUrd4v0.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_ba5e0 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_ba5e0.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_ba5e0' '-mtune=generic' '-march=x86-64'
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_22c73' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cc9xWQ6I.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_22c73 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_22c73.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_22c73' '-mtune=generic' '-march=x86-64'
 make[1]: Leaving directory '/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp'
 
 
@@ -71,14 +71,14 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_ba5e0/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_ba5e0.dir/build.make CMakeFiles/cmTC_ba5e0.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_22c73/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_22c73.dir/build.make CMakeFiles/cmTC_22c73.dir/build]
   ignore line: [make[1]: Entering directory '/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_ba5e0.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_ba5e0.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_ba5e0]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ba5e0.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_ba5e0.dir/CMakeCCompilerABI.c.o  -o cmTC_ba5e0 ]
+  ignore line: [Building C object CMakeFiles/cmTC_22c73.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_22c73.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_22c73]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_22c73.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_22c73.dir/CMakeCCompilerABI.c.o  -o cmTC_22c73 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper]
@@ -90,13 +90,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 7.3.0 (Ubuntu 7.3.0-27ubuntu1~18.04) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_ba5e0' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccUrd4v0.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_ba5e0 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_ba5e0.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_22c73' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cc9xWQ6I.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_22c73 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_22c73.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccUrd4v0.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cc9xWQ6I.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -116,7 +116,7 @@ Parsed C implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_ba5e0] ==> ignore
+    arg [cmTC_22c73] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o] ==> ignore
@@ -128,7 +128,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../..]
-    arg [CMakeFiles/cmTC_ba5e0.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_22c73.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--push-state] ==> ignore
     arg [--as-needed] ==> ignore
@@ -160,14 +160,14 @@ Parsed C implicit link information from above output:
 Detecting C [-std=c11] compiler features compiled with the following output:
 Change Dir: /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_169b8/fast"
-/usr/bin/make -f CMakeFiles/cmTC_169b8.dir/build.make CMakeFiles/cmTC_169b8.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_ea603/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ea603.dir/build.make CMakeFiles/cmTC_ea603.dir/build
 make[1]: Entering directory '/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_169b8.dir/feature_tests.c.o
-/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_169b8.dir/feature_tests.c.o   -c /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_169b8
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_169b8.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_169b8.dir/feature_tests.c.o  -o cmTC_169b8 
+Building C object CMakeFiles/cmTC_ea603.dir/feature_tests.c.o
+/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_ea603.dir/feature_tests.c.o   -c /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_ea603
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ea603.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_ea603.dir/feature_tests.c.o  -o cmTC_ea603 
 make[1]: Leaving directory '/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp'
 
 
@@ -180,14 +180,14 @@ make[1]: Leaving directory '/home/sanjanasunil/subjects/graphics/assignments/2-a
 Detecting C [-std=c99] compiler features compiled with the following output:
 Change Dir: /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_1c15f/fast"
-/usr/bin/make -f CMakeFiles/cmTC_1c15f.dir/build.make CMakeFiles/cmTC_1c15f.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_bcdf4/fast"
+/usr/bin/make -f CMakeFiles/cmTC_bcdf4.dir/build.make CMakeFiles/cmTC_bcdf4.dir/build
 make[1]: Entering directory '/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_1c15f.dir/feature_tests.c.o
-/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_1c15f.dir/feature_tests.c.o   -c /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_1c15f
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1c15f.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_1c15f.dir/feature_tests.c.o  -o cmTC_1c15f 
+Building C object CMakeFiles/cmTC_bcdf4.dir/feature_tests.c.o
+/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_bcdf4.dir/feature_tests.c.o   -c /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_bcdf4
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bcdf4.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_bcdf4.dir/feature_tests.c.o  -o cmTC_bcdf4 
 make[1]: Leaving directory '/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp'
 
 
@@ -200,14 +200,14 @@ make[1]: Leaving directory '/home/sanjanasunil/subjects/graphics/assignments/2-a
 Detecting C [-std=c90] compiler features compiled with the following output:
 Change Dir: /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_6dea6/fast"
-/usr/bin/make -f CMakeFiles/cmTC_6dea6.dir/build.make CMakeFiles/cmTC_6dea6.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_2ba79/fast"
+/usr/bin/make -f CMakeFiles/cmTC_2ba79.dir/build.make CMakeFiles/cmTC_2ba79.dir/build
 make[1]: Entering directory '/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_6dea6.dir/feature_tests.c.o
-/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_6dea6.dir/feature_tests.c.o   -c /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_6dea6
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6dea6.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_6dea6.dir/feature_tests.c.o  -o cmTC_6dea6 
+Building C object CMakeFiles/cmTC_2ba79.dir/feature_tests.c.o
+/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_2ba79.dir/feature_tests.c.o   -c /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_2ba79
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2ba79.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_2ba79.dir/feature_tests.c.o  -o cmTC_2ba79 
 make[1]: Leaving directory '/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp'
 
 
@@ -218,28 +218,28 @@ make[1]: Leaving directory '/home/sanjanasunil/subjects/graphics/assignments/2-a
 Determining if the CXX compiler works passed with the following output:
 Change Dir: /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_8e7ab/fast"
-/usr/bin/make -f CMakeFiles/cmTC_8e7ab.dir/build.make CMakeFiles/cmTC_8e7ab.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_30132/fast"
+/usr/bin/make -f CMakeFiles/cmTC_30132.dir/build.make CMakeFiles/cmTC_30132.dir/build
 make[1]: Entering directory '/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_8e7ab.dir/testCXXCompiler.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTC_8e7ab.dir/testCXXCompiler.cxx.o -c /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_8e7ab
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8e7ab.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_8e7ab.dir/testCXXCompiler.cxx.o  -o cmTC_8e7ab 
+Building CXX object CMakeFiles/cmTC_30132.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTC_30132.dir/testCXXCompiler.cxx.o -c /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_30132
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_30132.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_30132.dir/testCXXCompiler.cxx.o  -o cmTC_30132 
 make[1]: Leaving directory '/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_32e9e/fast"
-/usr/bin/make -f CMakeFiles/cmTC_32e9e.dir/build.make CMakeFiles/cmTC_32e9e.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_1ba88/fast"
+/usr/bin/make -f CMakeFiles/cmTC_1ba88.dir/build.make CMakeFiles/cmTC_1ba88.dir/build
 make[1]: Entering directory '/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_32e9e.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++     -o CMakeFiles/cmTC_32e9e.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_32e9e
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_32e9e.dir/link.txt --verbose=1
-/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_32e9e.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_32e9e 
+Building CXX object CMakeFiles/cmTC_1ba88.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTC_1ba88.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_1ba88
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1ba88.dir/link.txt --verbose=1
+/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_1ba88.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_1ba88 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper
@@ -251,9 +251,9 @@ Thread model: posix
 gcc version 7.3.0 (Ubuntu 7.3.0-27ubuntu1~18.04) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_32e9e' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cc3n5ADl.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_32e9e /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_32e9e.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_32e9e' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_1ba88' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cc6eOD9W.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_1ba88 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_1ba88.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_1ba88' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
 make[1]: Leaving directory '/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp'
 
 
@@ -261,14 +261,14 @@ Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_32e9e/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_32e9e.dir/build.make CMakeFiles/cmTC_32e9e.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_1ba88/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_1ba88.dir/build.make CMakeFiles/cmTC_1ba88.dir/build]
   ignore line: [make[1]: Entering directory '/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_32e9e.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_32e9e.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_32e9e]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_32e9e.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_32e9e.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_32e9e ]
+  ignore line: [Building CXX object CMakeFiles/cmTC_1ba88.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_1ba88.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_1ba88]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1ba88.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_1ba88.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_1ba88 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper]
@@ -280,13 +280,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 7.3.0 (Ubuntu 7.3.0-27ubuntu1~18.04) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_32e9e' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cc3n5ADl.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_32e9e /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_32e9e.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_1ba88' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cc6eOD9W.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_1ba88 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_1ba88.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/cc3n5ADl.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cc6eOD9W.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -306,7 +306,7 @@ Parsed CXX implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_32e9e] ==> ignore
+    arg [cmTC_1ba88] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o] ==> ignore
@@ -318,7 +318,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../..]
-    arg [CMakeFiles/cmTC_32e9e.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_1ba88.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -346,14 +346,14 @@ Parsed CXX implicit link information from above output:
 Detecting CXX [-std=c++1z] compiler features compiled with the following output:
 Change Dir: /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_793c3/fast"
-/usr/bin/make -f CMakeFiles/cmTC_793c3.dir/build.make CMakeFiles/cmTC_793c3.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_6763f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_6763f.dir/build.make CMakeFiles/cmTC_6763f.dir/build
 make[1]: Entering directory '/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_793c3.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_793c3.dir/feature_tests.cxx.o -c /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_793c3
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_793c3.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_793c3.dir/feature_tests.cxx.o  -o cmTC_793c3 
+Building CXX object CMakeFiles/cmTC_6763f.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_6763f.dir/feature_tests.cxx.o -c /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_6763f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6763f.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_6763f.dir/feature_tests.cxx.o  -o cmTC_6763f 
 make[1]: Leaving directory '/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp'
 
 
@@ -419,14 +419,14 @@ make[1]: Leaving directory '/home/sanjanasunil/subjects/graphics/assignments/2-a
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
 Change Dir: /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_506fc/fast"
-/usr/bin/make -f CMakeFiles/cmTC_506fc.dir/build.make CMakeFiles/cmTC_506fc.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_29d59/fast"
+/usr/bin/make -f CMakeFiles/cmTC_29d59.dir/build.make CMakeFiles/cmTC_29d59.dir/build
 make[1]: Entering directory '/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_506fc.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_506fc.dir/feature_tests.cxx.o -c /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_506fc
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_506fc.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_506fc.dir/feature_tests.cxx.o  -o cmTC_506fc 
+Building CXX object CMakeFiles/cmTC_29d59.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_29d59.dir/feature_tests.cxx.o -c /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_29d59
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_29d59.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_29d59.dir/feature_tests.cxx.o  -o cmTC_29d59 
 make[1]: Leaving directory '/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp'
 
 
@@ -492,14 +492,14 @@ make[1]: Leaving directory '/home/sanjanasunil/subjects/graphics/assignments/2-a
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
 Change Dir: /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_9a07e/fast"
-/usr/bin/make -f CMakeFiles/cmTC_9a07e.dir/build.make CMakeFiles/cmTC_9a07e.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_8065c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8065c.dir/build.make CMakeFiles/cmTC_8065c.dir/build
 make[1]: Entering directory '/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_9a07e.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_9a07e.dir/feature_tests.cxx.o -c /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_9a07e
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9a07e.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_9a07e.dir/feature_tests.cxx.o  -o cmTC_9a07e 
+Building CXX object CMakeFiles/cmTC_8065c.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_8065c.dir/feature_tests.cxx.o -c /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_8065c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8065c.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_8065c.dir/feature_tests.cxx.o  -o cmTC_8065c 
 make[1]: Leaving directory '/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp'
 
 
@@ -565,14 +565,14 @@ make[1]: Leaving directory '/home/sanjanasunil/subjects/graphics/assignments/2-a
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
 Change Dir: /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_6c74c/fast"
-/usr/bin/make -f CMakeFiles/cmTC_6c74c.dir/build.make CMakeFiles/cmTC_6c74c.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_3ce96/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3ce96.dir/build.make CMakeFiles/cmTC_3ce96.dir/build
 make[1]: Entering directory '/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_6c74c.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_6c74c.dir/feature_tests.cxx.o -c /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_6c74c
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6c74c.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_6c74c.dir/feature_tests.cxx.o  -o cmTC_6c74c 
+Building CXX object CMakeFiles/cmTC_3ce96.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_3ce96.dir/feature_tests.cxx.o -c /home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_3ce96
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3ce96.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_3ce96.dir/feature_tests.cxx.o  -o cmTC_3ce96 
 make[1]: Leaving directory '/home/sanjanasunil/subjects/graphics/assignments/2-assign/jet-plane-3d-game/build/CMakeFiles/CMakeTmp'
 
 

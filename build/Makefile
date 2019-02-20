@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named graphics_asgn1
+# Target rules for targets named game
 
 # Build rule for target.
-graphics_asgn1: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 graphics_asgn1
-.PHONY : graphics_asgn1
+game: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 game
+.PHONY : game
 
 # fast build rule for target.
-graphics_asgn1/fast:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/build
-.PHONY : graphics_asgn1/fast
+game/fast:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/build
+.PHONY : game/fast
 
 src/bomb.o: src/bomb.cpp.o
 
@@ -129,7 +129,7 @@ src/bomb.o: src/bomb.cpp.o
 
 # target to build an object file
 src/bomb.cpp.o:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/bomb.cpp.o
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/bomb.cpp.o
 .PHONY : src/bomb.cpp.o
 
 src/bomb.i: src/bomb.cpp.i
@@ -138,7 +138,7 @@ src/bomb.i: src/bomb.cpp.i
 
 # target to preprocess a source file
 src/bomb.cpp.i:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/bomb.cpp.i
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/bomb.cpp.i
 .PHONY : src/bomb.cpp.i
 
 src/bomb.s: src/bomb.cpp.s
@@ -147,7 +147,7 @@ src/bomb.s: src/bomb.cpp.s
 
 # target to generate assembly for a file
 src/bomb.cpp.s:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/bomb.cpp.s
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/bomb.cpp.s
 .PHONY : src/bomb.cpp.s
 
 src/checkpoint.o: src/checkpoint.cpp.o
@@ -156,7 +156,7 @@ src/checkpoint.o: src/checkpoint.cpp.o
 
 # target to build an object file
 src/checkpoint.cpp.o:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/checkpoint.cpp.o
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/checkpoint.cpp.o
 .PHONY : src/checkpoint.cpp.o
 
 src/checkpoint.i: src/checkpoint.cpp.i
@@ -165,7 +165,7 @@ src/checkpoint.i: src/checkpoint.cpp.i
 
 # target to preprocess a source file
 src/checkpoint.cpp.i:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/checkpoint.cpp.i
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/checkpoint.cpp.i
 .PHONY : src/checkpoint.cpp.i
 
 src/checkpoint.s: src/checkpoint.cpp.s
@@ -174,7 +174,7 @@ src/checkpoint.s: src/checkpoint.cpp.s
 
 # target to generate assembly for a file
 src/checkpoint.cpp.s:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/checkpoint.cpp.s
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/checkpoint.cpp.s
 .PHONY : src/checkpoint.cpp.s
 
 src/color.o: src/color.cpp.o
@@ -183,7 +183,7 @@ src/color.o: src/color.cpp.o
 
 # target to build an object file
 src/color.cpp.o:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/color.cpp.o
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/color.cpp.o
 .PHONY : src/color.cpp.o
 
 src/color.i: src/color.cpp.i
@@ -192,7 +192,7 @@ src/color.i: src/color.cpp.i
 
 # target to preprocess a source file
 src/color.cpp.i:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/color.cpp.i
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/color.cpp.i
 .PHONY : src/color.cpp.i
 
 src/color.s: src/color.cpp.s
@@ -201,7 +201,7 @@ src/color.s: src/color.cpp.s
 
 # target to generate assembly for a file
 src/color.cpp.s:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/color.cpp.s
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/color.cpp.s
 .PHONY : src/color.cpp.s
 
 src/dashboard.o: src/dashboard.cpp.o
@@ -210,7 +210,7 @@ src/dashboard.o: src/dashboard.cpp.o
 
 # target to build an object file
 src/dashboard.cpp.o:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/dashboard.cpp.o
 .PHONY : src/dashboard.cpp.o
 
 src/dashboard.i: src/dashboard.cpp.i
@@ -219,7 +219,7 @@ src/dashboard.i: src/dashboard.cpp.i
 
 # target to preprocess a source file
 src/dashboard.cpp.i:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.i
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/dashboard.cpp.i
 .PHONY : src/dashboard.cpp.i
 
 src/dashboard.s: src/dashboard.cpp.s
@@ -228,7 +228,7 @@ src/dashboard.s: src/dashboard.cpp.s
 
 # target to generate assembly for a file
 src/dashboard.cpp.s:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.s
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/dashboard.cpp.s
 .PHONY : src/dashboard.cpp.s
 
 src/fuelup.o: src/fuelup.cpp.o
@@ -237,7 +237,7 @@ src/fuelup.o: src/fuelup.cpp.o
 
 # target to build an object file
 src/fuelup.cpp.o:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/fuelup.cpp.o
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/fuelup.cpp.o
 .PHONY : src/fuelup.cpp.o
 
 src/fuelup.i: src/fuelup.cpp.i
@@ -246,7 +246,7 @@ src/fuelup.i: src/fuelup.cpp.i
 
 # target to preprocess a source file
 src/fuelup.cpp.i:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/fuelup.cpp.i
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/fuelup.cpp.i
 .PHONY : src/fuelup.cpp.i
 
 src/fuelup.s: src/fuelup.cpp.s
@@ -255,7 +255,7 @@ src/fuelup.s: src/fuelup.cpp.s
 
 # target to generate assembly for a file
 src/fuelup.cpp.s:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/fuelup.cpp.s
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/fuelup.cpp.s
 .PHONY : src/fuelup.cpp.s
 
 src/input.o: src/input.cpp.o
@@ -264,7 +264,7 @@ src/input.o: src/input.cpp.o
 
 # target to build an object file
 src/input.cpp.o:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/input.cpp.o
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/input.cpp.o
 .PHONY : src/input.cpp.o
 
 src/input.i: src/input.cpp.i
@@ -273,7 +273,7 @@ src/input.i: src/input.cpp.i
 
 # target to preprocess a source file
 src/input.cpp.i:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/input.cpp.i
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/input.cpp.i
 .PHONY : src/input.cpp.i
 
 src/input.s: src/input.cpp.s
@@ -282,7 +282,7 @@ src/input.s: src/input.cpp.s
 
 # target to generate assembly for a file
 src/input.cpp.s:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/input.cpp.s
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/input.cpp.s
 .PHONY : src/input.cpp.s
 
 src/island.o: src/island.cpp.o
@@ -291,7 +291,7 @@ src/island.o: src/island.cpp.o
 
 # target to build an object file
 src/island.cpp.o:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/island.cpp.o
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/island.cpp.o
 .PHONY : src/island.cpp.o
 
 src/island.i: src/island.cpp.i
@@ -300,7 +300,7 @@ src/island.i: src/island.cpp.i
 
 # target to preprocess a source file
 src/island.cpp.i:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/island.cpp.i
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/island.cpp.i
 .PHONY : src/island.cpp.i
 
 src/island.s: src/island.cpp.s
@@ -309,7 +309,7 @@ src/island.s: src/island.cpp.s
 
 # target to generate assembly for a file
 src/island.cpp.s:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/island.cpp.s
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/island.cpp.s
 .PHONY : src/island.cpp.s
 
 src/main.o: src/main.cpp.o
@@ -318,7 +318,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/main.cpp.o
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -327,7 +327,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/main.cpp.i
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -336,7 +336,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/main.cpp.s
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 src/missile.o: src/missile.cpp.o
@@ -345,7 +345,7 @@ src/missile.o: src/missile.cpp.o
 
 # target to build an object file
 src/missile.cpp.o:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/missile.cpp.o
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/missile.cpp.o
 .PHONY : src/missile.cpp.o
 
 src/missile.i: src/missile.cpp.i
@@ -354,7 +354,7 @@ src/missile.i: src/missile.cpp.i
 
 # target to preprocess a source file
 src/missile.cpp.i:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/missile.cpp.i
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/missile.cpp.i
 .PHONY : src/missile.cpp.i
 
 src/missile.s: src/missile.cpp.s
@@ -363,7 +363,7 @@ src/missile.s: src/missile.cpp.s
 
 # target to generate assembly for a file
 src/missile.cpp.s:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/missile.cpp.s
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/missile.cpp.s
 .PHONY : src/missile.cpp.s
 
 src/nonedit.o: src/nonedit.cpp.o
@@ -372,7 +372,7 @@ src/nonedit.o: src/nonedit.cpp.o
 
 # target to build an object file
 src/nonedit.cpp.o:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/nonedit.cpp.o
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/nonedit.cpp.o
 .PHONY : src/nonedit.cpp.o
 
 src/nonedit.i: src/nonedit.cpp.i
@@ -381,7 +381,7 @@ src/nonedit.i: src/nonedit.cpp.i
 
 # target to preprocess a source file
 src/nonedit.cpp.i:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/nonedit.cpp.i
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/nonedit.cpp.i
 .PHONY : src/nonedit.cpp.i
 
 src/nonedit.s: src/nonedit.cpp.s
@@ -390,7 +390,7 @@ src/nonedit.s: src/nonedit.cpp.s
 
 # target to generate assembly for a file
 src/nonedit.cpp.s:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/nonedit.cpp.s
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/nonedit.cpp.s
 .PHONY : src/nonedit.cpp.s
 
 src/other_handlers.o: src/other_handlers.cpp.o
@@ -399,7 +399,7 @@ src/other_handlers.o: src/other_handlers.cpp.o
 
 # target to build an object file
 src/other_handlers.cpp.o:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.o
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/other_handlers.cpp.o
 .PHONY : src/other_handlers.cpp.o
 
 src/other_handlers.i: src/other_handlers.cpp.i
@@ -408,7 +408,7 @@ src/other_handlers.i: src/other_handlers.cpp.i
 
 # target to preprocess a source file
 src/other_handlers.cpp.i:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.i
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/other_handlers.cpp.i
 .PHONY : src/other_handlers.cpp.i
 
 src/other_handlers.s: src/other_handlers.cpp.s
@@ -417,7 +417,7 @@ src/other_handlers.s: src/other_handlers.cpp.s
 
 # target to generate assembly for a file
 src/other_handlers.cpp.s:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.s
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/other_handlers.cpp.s
 .PHONY : src/other_handlers.cpp.s
 
 src/parachute.o: src/parachute.cpp.o
@@ -426,7 +426,7 @@ src/parachute.o: src/parachute.cpp.o
 
 # target to build an object file
 src/parachute.cpp.o:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/parachute.cpp.o
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/parachute.cpp.o
 .PHONY : src/parachute.cpp.o
 
 src/parachute.i: src/parachute.cpp.i
@@ -435,7 +435,7 @@ src/parachute.i: src/parachute.cpp.i
 
 # target to preprocess a source file
 src/parachute.cpp.i:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/parachute.cpp.i
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/parachute.cpp.i
 .PHONY : src/parachute.cpp.i
 
 src/parachute.s: src/parachute.cpp.s
@@ -444,7 +444,7 @@ src/parachute.s: src/parachute.cpp.s
 
 # target to generate assembly for a file
 src/parachute.cpp.s:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/parachute.cpp.s
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/parachute.cpp.s
 .PHONY : src/parachute.cpp.s
 
 src/plane.o: src/plane.cpp.o
@@ -453,7 +453,7 @@ src/plane.o: src/plane.cpp.o
 
 # target to build an object file
 src/plane.cpp.o:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/plane.cpp.o
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/plane.cpp.o
 .PHONY : src/plane.cpp.o
 
 src/plane.i: src/plane.cpp.i
@@ -462,7 +462,7 @@ src/plane.i: src/plane.cpp.i
 
 # target to preprocess a source file
 src/plane.cpp.i:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/plane.cpp.i
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/plane.cpp.i
 .PHONY : src/plane.cpp.i
 
 src/plane.s: src/plane.cpp.s
@@ -471,7 +471,7 @@ src/plane.s: src/plane.cpp.s
 
 # target to generate assembly for a file
 src/plane.cpp.s:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/plane.cpp.s
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/plane.cpp.s
 .PHONY : src/plane.cpp.s
 
 src/ring.o: src/ring.cpp.o
@@ -480,7 +480,7 @@ src/ring.o: src/ring.cpp.o
 
 # target to build an object file
 src/ring.cpp.o:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/ring.cpp.o
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/ring.cpp.o
 .PHONY : src/ring.cpp.o
 
 src/ring.i: src/ring.cpp.i
@@ -489,7 +489,7 @@ src/ring.i: src/ring.cpp.i
 
 # target to preprocess a source file
 src/ring.cpp.i:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/ring.cpp.i
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/ring.cpp.i
 .PHONY : src/ring.cpp.i
 
 src/ring.s: src/ring.cpp.s
@@ -498,7 +498,7 @@ src/ring.s: src/ring.cpp.s
 
 # target to generate assembly for a file
 src/ring.cpp.s:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/ring.cpp.s
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/ring.cpp.s
 .PHONY : src/ring.cpp.s
 
 src/sea.o: src/sea.cpp.o
@@ -507,7 +507,7 @@ src/sea.o: src/sea.cpp.o
 
 # target to build an object file
 src/sea.cpp.o:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/sea.cpp.o
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/sea.cpp.o
 .PHONY : src/sea.cpp.o
 
 src/sea.i: src/sea.cpp.i
@@ -516,7 +516,7 @@ src/sea.i: src/sea.cpp.i
 
 # target to preprocess a source file
 src/sea.cpp.i:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/sea.cpp.i
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/sea.cpp.i
 .PHONY : src/sea.cpp.i
 
 src/sea.s: src/sea.cpp.s
@@ -525,7 +525,7 @@ src/sea.s: src/sea.cpp.s
 
 # target to generate assembly for a file
 src/sea.cpp.s:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/sea.cpp.s
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/sea.cpp.s
 .PHONY : src/sea.cpp.s
 
 src/target.o: src/target.cpp.o
@@ -534,7 +534,7 @@ src/target.o: src/target.cpp.o
 
 # target to build an object file
 src/target.cpp.o:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/target.cpp.o
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/target.cpp.o
 .PHONY : src/target.cpp.o
 
 src/target.i: src/target.cpp.i
@@ -543,7 +543,7 @@ src/target.i: src/target.cpp.i
 
 # target to preprocess a source file
 src/target.cpp.i:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/target.cpp.i
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/target.cpp.i
 .PHONY : src/target.cpp.i
 
 src/target.s: src/target.cpp.s
@@ -552,7 +552,7 @@ src/target.s: src/target.cpp.s
 
 # target to generate assembly for a file
 src/target.cpp.s:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/target.cpp.s
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/target.cpp.s
 .PHONY : src/target.cpp.s
 
 src/timer.o: src/timer.cpp.o
@@ -561,7 +561,7 @@ src/timer.o: src/timer.cpp.o
 
 # target to build an object file
 src/timer.cpp.o:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/timer.cpp.o
 .PHONY : src/timer.cpp.o
 
 src/timer.i: src/timer.cpp.i
@@ -570,7 +570,7 @@ src/timer.i: src/timer.cpp.i
 
 # target to preprocess a source file
 src/timer.cpp.i:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/timer.cpp.i
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/timer.cpp.i
 .PHONY : src/timer.cpp.i
 
 src/timer.s: src/timer.cpp.s
@@ -579,7 +579,7 @@ src/timer.s: src/timer.cpp.s
 
 # target to generate assembly for a file
 src/timer.cpp.s:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/timer.cpp.s
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/timer.cpp.s
 .PHONY : src/timer.cpp.s
 
 src/volcano.o: src/volcano.cpp.o
@@ -588,7 +588,7 @@ src/volcano.o: src/volcano.cpp.o
 
 # target to build an object file
 src/volcano.cpp.o:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/volcano.cpp.o
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/volcano.cpp.o
 .PHONY : src/volcano.cpp.o
 
 src/volcano.i: src/volcano.cpp.i
@@ -597,7 +597,7 @@ src/volcano.i: src/volcano.cpp.i
 
 # target to preprocess a source file
 src/volcano.cpp.i:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/volcano.cpp.i
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/volcano.cpp.i
 .PHONY : src/volcano.cpp.i
 
 src/volcano.s: src/volcano.cpp.s
@@ -606,7 +606,7 @@ src/volcano.s: src/volcano.cpp.s
 
 # target to generate assembly for a file
 src/volcano.cpp.s:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/volcano.cpp.s
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/volcano.cpp.s
 .PHONY : src/volcano.cpp.s
 
 # Help Target
@@ -616,7 +616,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... graphics_asgn1"
+	@echo "... game"
 	@echo "... edit_cache"
 	@echo "... src/bomb.o"
 	@echo "... src/bomb.i"
